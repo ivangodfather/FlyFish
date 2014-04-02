@@ -8,10 +8,11 @@
 
 #import "Entity.h"
 @import GameKit;
+@class PlayerResult;
 
 @interface Obstacle : Entity
 
-- (void)addPlayer:(GKPlayer *)player;
+- (void)addPlayerResult:(PlayerResult *)playerResult;
 + (Obstacle *)spawnWithScene:(MyScene *)myScene;
 + (void)moveNewObstacle:(Obstacle *)newObstacle fromLastObstacle:(Obstacle *)lastObstacle withScene:(MyScene *)scene;
 + (NSUInteger)numberOfInstances;

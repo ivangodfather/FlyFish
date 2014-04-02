@@ -7,6 +7,8 @@
 //
 
 #import "GameKitHelper.h"
+#import "PlayerResult.h"
+
 NSString *const PresentAuthenticationViewController = @"present_authentication_view_controller";
 NSString *const PlayerAuthenticated = @"player_authenticated";
 
@@ -47,6 +49,13 @@ NSString *const PlayerAuthenticated = @"player_authenticated";
             [self setAuthenticationViewController:viewController];
         } else if([GKLocalPlayer localPlayer].isAuthenticated) {
             _enableGameCenter = YES;
+            [self getTopScoresWithNumOfScores:25
+                                  playerScope:GKLeaderboardPlayerScopeGlobal
+                                    timeScope:GKLeaderboardTimeScopeAllTime
+                             forLeaderboardID:kLeaderBoardID
+                        withCompletionHandler:^(NSArray *scoresArray) {
+                            _topScores = scoresArray;
+                        }];
             [[NSNotificationCenter defaultCenter] postNotificationName:PlayerAuthenticated object:self];
         } else {
             _enableGameCenter = NO;
@@ -120,10 +129,10 @@ NSString *const PlayerAuthenticated = @"player_authenticated";
 
 
 - (void)getTopScoresWithNumOfScores:(int)numOfScores
-                     playerScope:(GKLeaderboardPlayerScope)playerScope
-                       timeScope:(GKLeaderboardTimeScope)timeScope
-                forLeaderboardID:(NSString *)leaderboardID
-           withCompletionHandler:(void(^)(NSArray *scoresArray))completionHandler
+                        playerScope:(GKLeaderboardPlayerScope)playerScope
+                          timeScope:(GKLeaderboardTimeScope)timeScope
+                   forLeaderboardID:(NSString *)leaderboardID
+              withCompletionHandler:(void(^)(NSArray *scoresArray))completionHandler
 {
     if (!_enableGameCenter) {
         NSLog(@"Local play is not authenticated");
@@ -140,10 +149,28 @@ NSString *const PlayerAuthenticated = @"player_authenticated";
         if (error) {
             [self setLastError:error];
         }
-        NSLog(@"Get Scores completed! %lu", scores.count);
-        completionHandler(scores);
+        completionHandler([self arrayToArrayWithDict:scores]);
     }];
     
+}
+
+- (NSMutableArray *)arrayToArrayWithDict:(NSArray *)arrayOld
+{
+    NSMutableArray *array = [NSMutableArray array];
+    for (GKScore *score in arrayOld) {
+        PlayerResult *playerResult = [PlayerResult new];
+        [GKPlayer loadPlayersForIdentifiers:@[score.playerID] withCompletionHandler:^(NSArray *players, NSError *error) {
+            GKPlayer *player = [players lastObject]; //TODO puede devolver más de 1 player por score.
+            if (!player) return;
+            playerResult.player = player;
+            [player loadPhotoForSize:GKPhotoSizeNormal withCompletionHandler:^(UIImage *photo, NSError *error) {
+                if (photo) playerResult.photo = photo;
+            }];
+        }];
+        playerResult.score = score;
+        [array addObject:playerResult];
+    }
+    return array;
 }
 
 

@@ -9,6 +9,8 @@
 #import "Obstacle.h"
 #import "Pipe.h"
 #import "UIImage+AddOn.h"
+#import "PlayerResult.h"
+
 
 //TODO RETOCAR 25
 static NSUInteger instances = 0;
@@ -36,31 +38,27 @@ static NSUInteger instances = 0;
     return self;
 }
 
-- (void)addPlayer:(GKPlayer *)player
+- (void)addPlayerResult:(PlayerResult *)playerResult
 {
-    if (!player) {
-        NSLog(@"No player!");
+    if (!playerResult) {
+        NSLog(@"No playerresult!");
         return;
     }
-    NSLog(@"%@",player);
     
-    
-    [player loadPhotoForSize:GKPhotoSizeSmall withCompletionHandler:^(UIImage *photo, NSError *error) {
-        SKTexture *texture;
-        CGSize size = IPAD?CGSizeMake(kAvatarSize, kAvatarSize):CGSizeMake(kAvatarSize/1.5, kAvatarSize/1.5);
-        texture = (error || !photo)?[_MyScene->_atlas textureNamed:@"avatar"]:[SKTexture textureWithImage:photo];
-        SKSpriteNode *imageNode = [SKSpriteNode spriteNodeWithTexture:texture];
-        [imageNode setSize:size];
-        SKCropNode *cropNode = [SKCropNode node];
-        SKSpriteNode *maskShapeNode = [SKSpriteNode spriteNodeWithTexture:[_MyScene->_atlas textureNamed:@"picture-frame-mask"]];
-        [cropNode setMaskNode:maskShapeNode];
-        [cropNode addChild:imageNode];
-        cropNode.position = CGPointMake(0, self.size.height/2 + imageNode.size.height/2);
-        cropNode.alpha = 0.7;
-        [self addChild:cropNode];
-    }];
+    SKTexture *texture;
+    CGSize size = IPAD?CGSizeMake(kAvatarSize, kAvatarSize):CGSizeMake(kAvatarSize/1.5, kAvatarSize/1.5);
+    texture = (!playerResult.photo)?[_MyScene->_atlas textureNamed:@"avatar"]:[SKTexture textureWithImage:playerResult.photo];
+    SKSpriteNode *imageNode = [SKSpriteNode spriteNodeWithTexture:texture];
+    [imageNode setSize:size];
+    SKCropNode *cropNode = [SKCropNode node];
+    SKSpriteNode *maskShapeNode = [SKSpriteNode spriteNodeWithTexture:[_MyScene->_atlas textureNamed:@"picture-frame-mask"]];
+    [cropNode setMaskNode:maskShapeNode];
+    [cropNode addChild:imageNode];
+    cropNode.position = CGPointMake(0, self.size.height/2 + imageNode.size.height/2);
+    cropNode.alpha = 0.7;
+    [self addChild:cropNode];
     SKLabelNode *aliasLabel = [SKLabelNode labelNodeWithFontNamed:kFontName];
-    aliasLabel.text = player.alias;
+    aliasLabel.text = playerResult.player.alias;
     aliasLabel.fontSize = IPAD?kFontSize:kFontSize/2;
     aliasLabel.zPosition = 1;
     aliasLabel.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;

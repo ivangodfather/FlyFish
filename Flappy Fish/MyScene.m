@@ -23,15 +23,14 @@
 #import "FishPlayer.h"
 #import "AchievementsHelper.h"
 #import "GameKitHelper.h"
+#import "PlayerResult.h"
+
 
 @implementation MyScene
 {
     //Game
     GameState _gameState;
     NSTimeInterval _dt, _lastUpdateTime;
-    
-    NSArray *_topScores;
-    
     
     NSMutableDictionary *_lastObjects;
     Obstacle *_lastObstacleAdded;
@@ -56,10 +55,9 @@
 - (void)setupScene
 {
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(getTopScoresFromGameCenter)
+                                             selector:@selector(playerAuthenticated)
                                                  name:PlayerAuthenticated
                                                object:nil];
-    [self getTopScoresFromGameCenter];
     
     _lastDecorateAdded = [Decorate new];
     _lastEmitterAdded = [Emitter new];
@@ -78,15 +76,9 @@
     }
 }
 
-- (void)getTopScoresFromGameCenter
+- (void)playerAuthenticated
 {
-    [[GameKitHelper sharedGameKitHelper] getTopScoresWithNumOfScores:10
-                                                         playerScope:GKLeaderboardPlayerScopeGlobal
-                                                           timeScope:GKLeaderboardTimeScopeAllTime
-                                                    forLeaderboardID:kLeaderBoardID
-                                               withCompletionHandler:^(NSArray *scoresArray) {
-                                                   _topScores = [NSArray arrayWithArray:scoresArray];
-                                               }];
+    NSLog(@"Player autenticated ok!");
 }
 
 - (void)setScore:(int)score
@@ -172,16 +164,10 @@
 - (void)insertScoreWithObstacle:(Obstacle *)obstacle
 {
     NSUInteger obstacleNum = [Obstacle numberOfInstances];
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"value == %lu",obstacleNum];
-    NSArray *scoresOnObstacleArray = [_topScores filteredArrayUsingPredicate:pred];
-    GKScore *score = [scoresOnObstacleArray lastObject];
-    if (score) {
-        [GKPlayer loadPlayersForIdentifiers:@[score.playerID] withCompletionHandler:^(NSArray *players, NSError *error) {
-            GKPlayer *player = [players lastObject];
-            [obstacle addPlayer:player];
-        }];
-    }
-    
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"score.value == %lu",obstacleNum];
+    NSArray *scoresOnObstacleArray = [[GameKitHelper sharedGameKitHelper].topScores filteredArrayUsingPredicate:pred];
+    PlayerResult *playerResult = [scoresOnObstacleArray lastObject];
+    if (playerResult) [obstacle addPlayerResult:playerResult];
 }
 
 - (int)bestScore
