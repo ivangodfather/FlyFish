@@ -13,6 +13,7 @@ extern NSString *const PlayerAuthenticated;
 
 @property (nonatomic, readonly) UIViewController *authenticationViewController;
 @property (nonatomic, readonly) NSError *lastError;
+@property (nonatomic, readonly) NSArray *topScores;
 
 + (instancetype)sharedGameKitHelper;
 - (void)authenticateLocalPlayer;
