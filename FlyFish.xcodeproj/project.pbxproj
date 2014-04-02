@@ -85,6 +85,7 @@
 		2CA80E4B18CF17B0005CCB02 /* SKTTimingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA80E4218CF17B0005CCB02 /* SKTTimingFunctions.m */; };
 		2CA80E4E18CF6178005CCB02 /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA80E4D18CF6178005CCB02 /* Entity.m */; };
 		2CB7D04418EB46B8006551DA /* UIImage+AddOn.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7D04318EB46B8006551DA /* UIImage+AddOn.m */; };
+		2CB7D04918ECD2B5006551DA /* PlayerResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7D04818ECD2B5006551DA /* PlayerResult.m */; };
 		2CB9944618E5D48300EFB2C6 /* Vitamin.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9944518E5D48300EFB2C6 /* Vitamin.m */; };
 		2CB9944A18E5D4EB00EFB2C6 /* VitaminRed.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9944918E5D4EA00EFB2C6 /* VitaminRed.m */; };
 		2CB9944D18E5F2B700EFB2C6 /* VitaminGreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9944C18E5F2B700EFB2C6 /* VitaminGreen.m */; };
@@ -228,6 +229,8 @@
 		2CA80E4D18CF6178005CCB02 /* Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Entity.m; path = Entities/Entity.m; sourceTree = "<group>"; };
 		2CB7D04218EB46B8006551DA /* UIImage+AddOn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+AddOn.h"; path = "Helpers/UIImage+AddOn.h"; sourceTree = "<group>"; };
 		2CB7D04318EB46B8006551DA /* UIImage+AddOn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+AddOn.m"; path = "Helpers/UIImage+AddOn.m"; sourceTree = "<group>"; };
+		2CB7D04718ECD2B5006551DA /* PlayerResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerResult.h; path = GameCenter/PlayerResult.h; sourceTree = "<group>"; };
+		2CB7D04818ECD2B5006551DA /* PlayerResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerResult.m; path = GameCenter/PlayerResult.m; sourceTree = "<group>"; };
 		2CB9944418E5D48300EFB2C6 /* Vitamin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vitamin.h; path = Entities/Vitamin.h; sourceTree = "<group>"; };
 		2CB9944518E5D48300EFB2C6 /* Vitamin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Vitamin.m; path = Entities/Vitamin.m; sourceTree = "<group>"; };
 		2CB9944818E5D4EA00EFB2C6 /* VitaminRed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VitaminRed.h; path = Entities/VitaminRed.h; sourceTree = "<group>"; };
@@ -335,6 +338,8 @@
 				2C21B64518DAF95D00D7725D /* GameKitHelper.m */,
 				2C98DFF518E23A810068553E /* AchievementsHelper.h */,
 				2C98DFF618E23A810068553E /* AchievementsHelper.m */,
+				2CB7D04718ECD2B5006551DA /* PlayerResult.h */,
+				2CB7D04818ECD2B5006551DA /* PlayerResult.m */,
 			);
 			name = GameKit;
 			sourceTree = "<group>";
@@ -728,6 +733,7 @@
 				2C332BCB18D2669600A55062 /* GrassLarge.m in Sources */,
 				2C21B63A18D9B07500D7725D /* Obstacle.m in Sources */,
 				2CA80E4818CF17B0005CCB02 /* SKNode+SKTExtras.m in Sources */,
+				2CB7D04918ECD2B5006551DA /* PlayerResult.m in Sources */,
 				2C332BCE18D267FB00A55062 /* CloudSmall.m in Sources */,
 				2CB9945318E5FB7B00EFB2C6 /* SKNode+Move.m in Sources */,
 				2CA80E4E18CF6178005CCB02 /* Entity.m in Sources */,
