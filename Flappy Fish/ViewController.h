@@ -1,6 +1,6 @@
 //
 //  ViewController.h
-//  Flappy Fish
+//  FlyFish
 //
 
 //  Copyright (c) 2014 Ivan Ruiz Monjo. All rights reserved.
@@ -10,5 +10,5 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface ViewController : UIViewController
-
+@property (nonatomic, strong) NSArray *topScores;
 @end

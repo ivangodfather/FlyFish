@@ -1,0 +1,1018 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C114C1418D2ED970086FCF9 /* Emitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C114C1318D2ED970086FCF9 /* Emitter.m */; };
+		2C21B62018D377C200D7725D /* Bug.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21B61F18D377C200D7725D /* Bug.m */; };
+		2C21B62218D37EF500D7725D /* bgMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C21B62118D37EF500D7725D /* bgMusic.mp3 */; };
+		2C21B62518D4B9BA00D7725D /* Bushes.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21B62418D4B9BA00D7725D /* Bushes.m */; };
+		2C21B62B18D6EB2C00D7725D /* Pipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21B62A18D6EB2C00D7725D /* Pipe.m */; };
+		2C21B63118D706C600D7725D /* Decorate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21B63018D706C600D7725D /* Decorate.m */; };
+		2C21B63418D708F000D7725D /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21B63318D708F000D7725D /* Enemy.m */; };
+		2C21B63718D88ECD00D7725D /* Rain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21B63618D88ECD00D7725D /* Rain.m */; };
+		2C21B63A18D9B07500D7725D /* Obstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21B63918D9B07500D7725D /* Obstacle.m */; };
+		2C21B63D18DAED6D00D7725D /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C21B63C18DAED6D00D7725D /* GameKit.framework */; };
+		2C21B64618DAF95D00D7725D /* GameKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21B64518DAF95D00D7725D /* GameKitHelper.m */; };
+		2C332BA318D2064A00A55062 /* SpritePrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C332BA218D2064A00A55062 /* SpritePrinter.m */; };
+		2C332BA718D20C7800A55062 /* sprite.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2C332BA618D20C7800A55062 /* sprite.atlas */; };
+		2C332BAA18D216FC00A55062 /* bg1@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C332BA818D216FC00A55062 /* bg1@2x~ipad.png */; };
+		2C332BAB18D216FC00A55062 /* bg2@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C332BA918D216FC00A55062 /* bg2@2x~ipad.png */; };
+		2C332BAF18D2295300A55062 /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C332BAE18D2295300A55062 /* Tree.m */; };
+		2C332BB218D22A1300A55062 /* Rock.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C332BB118D22A1300A55062 /* Rock.m */; };
+		2C332BB618D2363E00A55062 /* BlueJay.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C332BB518D2363E00A55062 /* BlueJay.m */; };
+		2C332BB918D23D4E00A55062 /* Crab.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C332BB818D23D4E00A55062 /* Crab.m */; };
+		2C332BC118D260FA00A55062 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C332BBB18D260FA00A55062 /* libTestFlight.a */; };
+		2C332BC218D260FA00A55062 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2C332BBC18D260FA00A55062 /* README.md */; };
+		2C332BC318D260FA00A55062 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 2C332BBD18D260FA00A55062 /* release_notes.md */; };
+		2C332BC518D2612B00A55062 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C332BC418D2612B00A55062 /* libz.dylib */; };
+		2C332BC818D2662F00A55062 /* GrassSmall.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C332BC718D2662F00A55062 /* GrassSmall.m */; };
+		2C332BCB18D2669600A55062 /* GrassLarge.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C332BCA18D2669600A55062 /* GrassLarge.m */; };
+		2C332BCE18D267FB00A55062 /* CloudSmall.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C332BCD18D267FB00A55062 /* CloudSmall.m */; };
+		2C332BD118D2680B00A55062 /* CloudLarge.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C332BD018D2680B00A55062 /* CloudLarge.m */; };
+		2C4E840618E1712100E49CCD /* FishPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E840518E1712100E49CCD /* FishPlayer.m */; };
+		2C77190C18D1A94C00BFB35B /* bg1@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C77190A18D1A94C00BFB35B /* bg1@2x~iphone.png */; };
+		2C77190D18D1A94C00BFB35B /* bg2@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C77190B18D1A94C00BFB35B /* bg2@2x~iphone.png */; };
+		2C881BB818D2E95E0055A2DB /* FireParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2C881BB618D2E95E0055A2DB /* FireParticle.sks */; };
+		2C881BB918D2E95E0055A2DB /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C881BB718D2E95E0055A2DB /* spark.png */; };
+		2C881BBC18D2E9C20055A2DB /* Bokeh.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2C881BBA18D2E9C20055A2DB /* Bokeh.sks */; };
+		2C881BBD18D2E9C20055A2DB /* bokeh.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C881BBB18D2E9C20055A2DB /* bokeh.png */; };
+		2C881BBF18D2E9E50055A2DB /* FireFlies.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2C881BBE18D2E9E50055A2DB /* FireFlies.sks */; };
+		2C881BC118D2E9FE0055A2DB /* Magic.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2C881BC018D2E9FE0055A2DB /* Magic.sks */; };
+		2C881BC318D2EA0F0055A2DB /* Rain.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2C881BC218D2EA0F0055A2DB /* Rain.sks */; };
+		2C881BC518D2EA260055A2DB /* Smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2C881BC418D2EA260055A2DB /* Smoke.sks */; };
+		2C881BC718D2EA380055A2DB /* Snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2C881BC618D2EA380055A2DB /* Snow.sks */; };
+		2C881BCA18D2EAAA0055A2DB /* Smoke.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C881BC918D2EAAA0055A2DB /* Smoke.m */; };
+		2C98DFF718E23A810068553E /* AchievementsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C98DFF618E23A810068553E /* AchievementsHelper.m */; };
+		2C98DFFD18E3A4F20068553E /* Translation.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C98DFFF18E3A4F20068553E /* Translation.strings */; };
+		2CA80DC518CEFD23005CCB02 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA80DC418CEFD23005CCB02 /* Foundation.framework */; };
+		2CA80DC718CEFD23005CCB02 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA80DC618CEFD23005CCB02 /* CoreGraphics.framework */; };
+		2CA80DC918CEFD23005CCB02 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA80DC818CEFD23005CCB02 /* UIKit.framework */; };
+		2CA80DCB18CEFD24005CCB02 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA80DCA18CEFD24005CCB02 /* SpriteKit.framework */; };
+		2CA80DD118CEFD24005CCB02 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CA80DCF18CEFD24005CCB02 /* InfoPlist.strings */; };
+		2CA80DD318CEFD24005CCB02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA80DD218CEFD24005CCB02 /* main.m */; };
+		2CA80DD718CEFD24005CCB02 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA80DD618CEFD24005CCB02 /* AppDelegate.m */; };
+		2CA80DDD18CEFD24005CCB02 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA80DDC18CEFD24005CCB02 /* ViewController.m */; };
+		2CA80DE018CEFD24005CCB02 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA80DDF18CEFD24005CCB02 /* MyScene.m */; };
+		2CA80DE418CEFD24005CCB02 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CA80DE318CEFD24005CCB02 /* Images.xcassets */; };
+		2CA80DEB18CEFD24005CCB02 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA80DEA18CEFD24005CCB02 /* XCTest.framework */; };
+		2CA80DEC18CEFD24005CCB02 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA80DC418CEFD23005CCB02 /* Foundation.framework */; };
+		2CA80DED18CEFD24005CCB02 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA80DC818CEFD23005CCB02 /* UIKit.framework */; };
+		2CA80DF518CEFD24005CCB02 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CA80DF318CEFD24005CCB02 /* InfoPlist.strings */; };
+		2CA80DF718CEFD24005CCB02 /* Flappy_FishTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA80DF618CEFD24005CCB02 /* Flappy_FishTests.m */; };
+		2CA80E1C18CEFD71005CCB02 /* backgrounds.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2CA80E1218CEFD71005CCB02 /* backgrounds.atlas */; };
+		2CA80E1D18CEFD71005CCB02 /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2CA80E1318CEFD71005CCB02 /* sprites.atlas */; };
+		2CA80E1E18CEFD71005CCB02 /* coin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CA80E1518CEFD71005CCB02 /* coin.wav */; };
+		2CA80E1F18CEFD71005CCB02 /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CA80E1618CEFD71005CCB02 /* ding.wav */; };
+		2CA80E2018CEFD71005CCB02 /* falling.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CA80E1718CEFD71005CCB02 /* falling.wav */; };
+		2CA80E2118CEFD71005CCB02 /* flapping.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CA80E1818CEFD71005CCB02 /* flapping.wav */; };
+		2CA80E2218CEFD71005CCB02 /* hitGround.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CA80E1918CEFD71005CCB02 /* hitGround.wav */; };
+		2CA80E2318CEFD71005CCB02 /* pop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CA80E1A18CEFD71005CCB02 /* pop.wav */; };
+		2CA80E2418CEFD71005CCB02 /* whack.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CA80E1B18CEFD71005CCB02 /* whack.wav */; };
+		2CA80E2F18CF0F2F005CCB02 /* Background.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA80E2E18CF0F2F005CCB02 /* Background.m */; };
+		2CA80E3018CF13D3005CCB02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA80DD818CEFD24005CCB02 /* Main.storyboard */; };
+		2CA80E4418CF17B0005CCB02 /* SKAction+SKTExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA80E3418CF17B0005CCB02 /* SKAction+SKTExtras.m */; };
+		2CA80E4518CF17B0005CCB02 /* SKAction+SKTSpecialEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA80E3618CF17B0005CCB02 /* SKAction+SKTSpecialEffects.m */; };
+		2CA80E4618CF17B0005CCB02 /* SKEmitterNode+SKTExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA80E3818CF17B0005CCB02 /* SKEmitterNode+SKTExtras.m */; };
+		2CA80E4718CF17B0005CCB02 /* SKNode+SKTDebugDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA80E3A18CF17B0005CCB02 /* SKNode+SKTDebugDraw.m */; };
+		2CA80E4818CF17B0005CCB02 /* SKNode+SKTExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA80E3C18CF17B0005CCB02 /* SKNode+SKTExtras.m */; };
+		2CA80E4918CF17B0005CCB02 /* SKTAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA80E3E18CF17B0005CCB02 /* SKTAudio.m */; };
+		2CA80E4A18CF17B0005CCB02 /* SKTEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA80E4018CF17B0005CCB02 /* SKTEffects.m */; };
+		2CA80E4B18CF17B0005CCB02 /* SKTTimingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA80E4218CF17B0005CCB02 /* SKTTimingFunctions.m */; };
+		2CA80E4E18CF6178005CCB02 /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA80E4D18CF6178005CCB02 /* Entity.m */; };
+		2CB7D04418EB46B8006551DA /* UIImage+AddOn.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB7D04318EB46B8006551DA /* UIImage+AddOn.m */; };
+		2CB9944618E5D48300EFB2C6 /* Vitamin.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9944518E5D48300EFB2C6 /* Vitamin.m */; };
+		2CB9944A18E5D4EB00EFB2C6 /* VitaminRed.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9944918E5D4EA00EFB2C6 /* VitaminRed.m */; };
+		2CB9944D18E5F2B700EFB2C6 /* VitaminGreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9944C18E5F2B700EFB2C6 /* VitaminGreen.m */; };
+		2CB9945318E5FB7B00EFB2C6 /* SKNode+Move.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9945218E5FB7B00EFB2C6 /* SKNode+Move.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2CA80DEE18CEFD24005CCB02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CA80DB918CEFD23005CCB02 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2CA80DC018CEFD23005CCB02;
+			remoteInfo = "Flappy Fish";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2C114C1218D2ED970086FCF9 /* Emitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Emitter.h; path = Entities/Emitter.h; sourceTree = "<group>"; };
+		2C114C1318D2ED970086FCF9 /* Emitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Emitter.m; path = Entities/Emitter.m; sourceTree = "<group>"; };
+		2C21B61E18D377C200D7725D /* Bug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bug.h; path = Entities/Bug.h; sourceTree = "<group>"; };
+		2C21B61F18D377C200D7725D /* Bug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bug.m; path = Entities/Bug.m; sourceTree = "<group>"; };
+		2C21B62118D37EF500D7725D /* bgMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgMusic.mp3; sourceTree = "<group>"; };
+		2C21B62318D4B9BA00D7725D /* Bushes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bushes.h; path = Entities/Bushes.h; sourceTree = "<group>"; };
+		2C21B62418D4B9BA00D7725D /* Bushes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bushes.m; path = Entities/Bushes.m; sourceTree = "<group>"; };
+		2C21B62918D6EB2C00D7725D /* Pipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pipe.h; path = Entities/Pipe.h; sourceTree = "<group>"; };
+		2C21B62A18D6EB2C00D7725D /* Pipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pipe.m; path = Entities/Pipe.m; sourceTree = "<group>"; };
+		2C21B62F18D706C600D7725D /* Decorate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Decorate.h; path = Entities/Decorate.h; sourceTree = "<group>"; };
+		2C21B63018D706C600D7725D /* Decorate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Decorate.m; path = Entities/Decorate.m; sourceTree = "<group>"; };
+		2C21B63218D708F000D7725D /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Enemy.h; path = Entities/Enemy.h; sourceTree = "<group>"; };
+		2C21B63318D708F000D7725D /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Enemy.m; path = Entities/Enemy.m; sourceTree = "<group>"; };
+		2C21B63518D88ECD00D7725D /* Rain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Rain.h; path = Entities/Rain.h; sourceTree = "<group>"; };
+		2C21B63618D88ECD00D7725D /* Rain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Rain.m; path = Entities/Rain.m; sourceTree = "<group>"; };
+		2C21B63818D9B07500D7725D /* Obstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Obstacle.h; path = Entities/Obstacle.h; sourceTree = "<group>"; };
+		2C21B63918D9B07500D7725D /* Obstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Obstacle.m; path = Entities/Obstacle.m; sourceTree = "<group>"; };
+		2C21B63C18DAED6D00D7725D /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		2C21B64418DAF95D00D7725D /* GameKitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameKitHelper.h; path = GameCenter/GameKitHelper.h; sourceTree = "<group>"; };
+		2C21B64518DAF95D00D7725D /* GameKitHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameKitHelper.m; path = GameCenter/GameKitHelper.m; sourceTree = "<group>"; };
+		2C332BA118D2064A00A55062 /* SpritePrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpritePrinter.h; path = Helpers/SpritePrinter.h; sourceTree = "<group>"; };
+		2C332BA218D2064A00A55062 /* SpritePrinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpritePrinter.m; path = Helpers/SpritePrinter.m; sourceTree = "<group>"; };
+		2C332BA618D20C7800A55062 /* sprite.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprite.atlas; sourceTree = "<group>"; };
+		2C332BA818D216FC00A55062 /* bg1@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg1@2x~ipad.png"; sourceTree = "<group>"; };
+		2C332BA918D216FC00A55062 /* bg2@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg2@2x~ipad.png"; sourceTree = "<group>"; };
+		2C332BAD18D2295300A55062 /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tree.h; path = Entities/Tree.h; sourceTree = "<group>"; };
+		2C332BAE18D2295300A55062 /* Tree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tree.m; path = Entities/Tree.m; sourceTree = "<group>"; };
+		2C332BB018D22A1300A55062 /* Rock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Rock.h; path = Entities/Rock.h; sourceTree = "<group>"; };
+		2C332BB118D22A1300A55062 /* Rock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Rock.m; path = Entities/Rock.m; sourceTree = "<group>"; };
+		2C332BB418D2363E00A55062 /* BlueJay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlueJay.h; path = Entities/BlueJay.h; sourceTree = "<group>"; };
+		2C332BB518D2363E00A55062 /* BlueJay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlueJay.m; path = Entities/BlueJay.m; sourceTree = "<group>"; };
+		2C332BB718D23D4E00A55062 /* Crab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Crab.h; path = Entities/Crab.h; sourceTree = "<group>"; };
+		2C332BB818D23D4E00A55062 /* Crab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Crab.m; path = Entities/Crab.m; sourceTree = "<group>"; };
+		2C332BBB18D260FA00A55062 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		2C332BBC18D260FA00A55062 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		2C332BBD18D260FA00A55062 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		2C332BBE18D260FA00A55062 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		2C332BBF18D260FA00A55062 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		2C332BC018D260FA00A55062 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		2C332BC418D2612B00A55062 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		2C332BC618D2662F00A55062 /* GrassSmall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GrassSmall.h; path = Entities/GrassSmall.h; sourceTree = "<group>"; };
+		2C332BC718D2662F00A55062 /* GrassSmall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GrassSmall.m; path = Entities/GrassSmall.m; sourceTree = "<group>"; };
+		2C332BC918D2669600A55062 /* GrassLarge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GrassLarge.h; path = Entities/GrassLarge.h; sourceTree = "<group>"; };
+		2C332BCA18D2669600A55062 /* GrassLarge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GrassLarge.m; path = Entities/GrassLarge.m; sourceTree = "<group>"; };
+		2C332BCC18D267FB00A55062 /* CloudSmall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CloudSmall.h; path = Entities/CloudSmall.h; sourceTree = "<group>"; };
+		2C332BCD18D267FB00A55062 /* CloudSmall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CloudSmall.m; path = Entities/CloudSmall.m; sourceTree = "<group>"; };
+		2C332BCF18D2680B00A55062 /* CloudLarge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CloudLarge.h; path = Entities/CloudLarge.h; sourceTree = "<group>"; };
+		2C332BD018D2680B00A55062 /* CloudLarge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CloudLarge.m; path = Entities/CloudLarge.m; sourceTree = "<group>"; };
+		2C4E840418E1712100E49CCD /* FishPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FishPlayer.h; path = Entities/FishPlayer.h; sourceTree = "<group>"; };
+		2C4E840518E1712100E49CCD /* FishPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FishPlayer.m; path = Entities/FishPlayer.m; sourceTree = "<group>"; };
+		2C77190A18D1A94C00BFB35B /* bg1@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg1@2x~iphone.png"; sourceTree = "<group>"; };
+		2C77190B18D1A94C00BFB35B /* bg2@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg2@2x~iphone.png"; sourceTree = "<group>"; };
+		2C881BB618D2E95E0055A2DB /* FireParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = FireParticle.sks; path = EmitterNodes/FireParticle.sks; sourceTree = "<group>"; };
+		2C881BB718D2E95E0055A2DB /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = EmitterNodes/spark.png; sourceTree = "<group>"; };
+		2C881BBA18D2E9C20055A2DB /* Bokeh.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Bokeh.sks; path = EmitterNodes/Bokeh.sks; sourceTree = "<group>"; };
+		2C881BBB18D2E9C20055A2DB /* bokeh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bokeh.png; path = EmitterNodes/bokeh.png; sourceTree = "<group>"; };
+		2C881BBE18D2E9E50055A2DB /* FireFlies.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = FireFlies.sks; path = EmitterNodes/FireFlies.sks; sourceTree = "<group>"; };
+		2C881BC018D2E9FE0055A2DB /* Magic.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Magic.sks; path = EmitterNodes/Magic.sks; sourceTree = "<group>"; };
+		2C881BC218D2EA0F0055A2DB /* Rain.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Rain.sks; path = EmitterNodes/Rain.sks; sourceTree = "<group>"; };
+		2C881BC418D2EA260055A2DB /* Smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Smoke.sks; path = EmitterNodes/Smoke.sks; sourceTree = "<group>"; };
+		2C881BC618D2EA380055A2DB /* Snow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Snow.sks; path = EmitterNodes/Snow.sks; sourceTree = "<group>"; };
+		2C881BC818D2EAAA0055A2DB /* Smoke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Smoke.h; path = Entities/Smoke.h; sourceTree = "<group>"; };
+		2C881BC918D2EAAA0055A2DB /* Smoke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Smoke.m; path = Entities/Smoke.m; sourceTree = "<group>"; };
+		2C98DFF518E23A810068553E /* AchievementsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AchievementsHelper.h; path = GameCenter/AchievementsHelper.h; sourceTree = "<group>"; };
+		2C98DFF618E23A810068553E /* AchievementsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AchievementsHelper.m; path = GameCenter/AchievementsHelper.m; sourceTree = "<group>"; };
+		2C98DFF818E39FEC0068553E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2C98DFF918E39FED0068553E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		2C98DFFA18E39FED0068553E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2C98DFFE18E3A4F20068553E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Translation.strings; sourceTree = "<group>"; };
+		2C98E00018E3A5040068553E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Translation.strings; sourceTree = "<group>"; };
+		2C98E00118E3A5040068553E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Translation.strings; sourceTree = "<group>"; };
+		2CA80DC118CEFD23005CCB02 /* FlyFish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlyFish.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CA80DC418CEFD23005CCB02 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2CA80DC618CEFD23005CCB02 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2CA80DC818CEFD23005CCB02 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2CA80DCA18CEFD24005CCB02 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		2CA80DCE18CEFD24005CCB02 /* FlyFish-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlyFish-Info.plist"; sourceTree = "<group>"; };
+		2CA80DD018CEFD24005CCB02 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2CA80DD218CEFD24005CCB02 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2CA80DD418CEFD24005CCB02 /* FlyFish-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlyFish-Prefix.pch"; sourceTree = "<group>"; };
+		2CA80DD518CEFD24005CCB02 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2CA80DD618CEFD24005CCB02 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2CA80DD918CEFD24005CCB02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2CA80DDB18CEFD24005CCB02 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2CA80DDC18CEFD24005CCB02 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2CA80DDE18CEFD24005CCB02 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
+		2CA80DDF18CEFD24005CCB02 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
+		2CA80DE318CEFD24005CCB02 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2CA80DE918CEFD24005CCB02 /* FlyFishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlyFishTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CA80DEA18CEFD24005CCB02 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2CA80DF218CEFD24005CCB02 /* FlyFishTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlyFishTests-Info.plist"; sourceTree = "<group>"; };
+		2CA80DF418CEFD24005CCB02 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2CA80DF618CEFD24005CCB02 /* Flappy_FishTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Flappy_FishTests.m; sourceTree = "<group>"; };
+		2CA80E1218CEFD71005CCB02 /* backgrounds.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = backgrounds.atlas; sourceTree = "<group>"; };
+		2CA80E1318CEFD71005CCB02 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
+		2CA80E1518CEFD71005CCB02 /* coin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = coin.wav; sourceTree = "<group>"; };
+		2CA80E1618CEFD71005CCB02 /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding.wav; sourceTree = "<group>"; };
+		2CA80E1718CEFD71005CCB02 /* falling.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = falling.wav; sourceTree = "<group>"; };
+		2CA80E1818CEFD71005CCB02 /* flapping.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = flapping.wav; sourceTree = "<group>"; };
+		2CA80E1918CEFD71005CCB02 /* hitGround.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hitGround.wav; sourceTree = "<group>"; };
+		2CA80E1A18CEFD71005CCB02 /* pop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pop.wav; sourceTree = "<group>"; };
+		2CA80E1B18CEFD71005CCB02 /* whack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = whack.wav; sourceTree = "<group>"; };
+		2CA80E2618CF01A4005CCB02 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		2CA80E2D18CF0F2F005CCB02 /* Background.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Background.h; path = Entities/Background.h; sourceTree = "<group>"; };
+		2CA80E2E18CF0F2F005CCB02 /* Background.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Background.m; path = Entities/Background.m; sourceTree = "<group>"; };
+		2CA80E3318CF17B0005CCB02 /* SKAction+SKTExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKAction+SKTExtras.h"; sourceTree = "<group>"; };
+		2CA80E3418CF17B0005CCB02 /* SKAction+SKTExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKAction+SKTExtras.m"; sourceTree = "<group>"; };
+		2CA80E3518CF17B0005CCB02 /* SKAction+SKTSpecialEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKAction+SKTSpecialEffects.h"; sourceTree = "<group>"; };
+		2CA80E3618CF17B0005CCB02 /* SKAction+SKTSpecialEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKAction+SKTSpecialEffects.m"; sourceTree = "<group>"; };
+		2CA80E3718CF17B0005CCB02 /* SKEmitterNode+SKTExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKEmitterNode+SKTExtras.h"; sourceTree = "<group>"; };
+		2CA80E3818CF17B0005CCB02 /* SKEmitterNode+SKTExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKEmitterNode+SKTExtras.m"; sourceTree = "<group>"; };
+		2CA80E3918CF17B0005CCB02 /* SKNode+SKTDebugDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKNode+SKTDebugDraw.h"; sourceTree = "<group>"; };
+		2CA80E3A18CF17B0005CCB02 /* SKNode+SKTDebugDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKNode+SKTDebugDraw.m"; sourceTree = "<group>"; };
+		2CA80E3B18CF17B0005CCB02 /* SKNode+SKTExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKNode+SKTExtras.h"; sourceTree = "<group>"; };
+		2CA80E3C18CF17B0005CCB02 /* SKNode+SKTExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKNode+SKTExtras.m"; sourceTree = "<group>"; };
+		2CA80E3D18CF17B0005CCB02 /* SKTAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTAudio.h; sourceTree = "<group>"; };
+		2CA80E3E18CF17B0005CCB02 /* SKTAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTAudio.m; sourceTree = "<group>"; };
+		2CA80E3F18CF17B0005CCB02 /* SKTEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTEffects.h; sourceTree = "<group>"; };
+		2CA80E4018CF17B0005CCB02 /* SKTEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTEffects.m; sourceTree = "<group>"; };
+		2CA80E4118CF17B0005CCB02 /* SKTTimingFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTTimingFunctions.h; sourceTree = "<group>"; };
+		2CA80E4218CF17B0005CCB02 /* SKTTimingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTTimingFunctions.m; sourceTree = "<group>"; };
+		2CA80E4318CF17B0005CCB02 /* SKTUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTUtils.h; sourceTree = "<group>"; };
+		2CA80E4C18CF6178005CCB02 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Entity.h; path = Entities/Entity.h; sourceTree = "<group>"; };
+		2CA80E4D18CF6178005CCB02 /* Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Entity.m; path = Entities/Entity.m; sourceTree = "<group>"; };
+		2CB7D04218EB46B8006551DA /* UIImage+AddOn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+AddOn.h"; path = "Helpers/UIImage+AddOn.h"; sourceTree = "<group>"; };
+		2CB7D04318EB46B8006551DA /* UIImage+AddOn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+AddOn.m"; path = "Helpers/UIImage+AddOn.m"; sourceTree = "<group>"; };
+		2CB9944418E5D48300EFB2C6 /* Vitamin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vitamin.h; path = Entities/Vitamin.h; sourceTree = "<group>"; };
+		2CB9944518E5D48300EFB2C6 /* Vitamin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Vitamin.m; path = Entities/Vitamin.m; sourceTree = "<group>"; };
+		2CB9944818E5D4EA00EFB2C6 /* VitaminRed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VitaminRed.h; path = Entities/VitaminRed.h; sourceTree = "<group>"; };
+		2CB9944918E5D4EA00EFB2C6 /* VitaminRed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VitaminRed.m; path = Entities/VitaminRed.m; sourceTree = "<group>"; };
+		2CB9944B18E5F2B700EFB2C6 /* VitaminGreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VitaminGreen.h; path = Entities/VitaminGreen.h; sourceTree = "<group>"; };
+		2CB9944C18E5F2B700EFB2C6 /* VitaminGreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VitaminGreen.m; path = Entities/VitaminGreen.m; sourceTree = "<group>"; };
+		2CB9945118E5FB7B00EFB2C6 /* SKNode+Move.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKNode+Move.h"; sourceTree = "<group>"; };
+		2CB9945218E5FB7B00EFB2C6 /* SKNode+Move.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKNode+Move.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2CA80DBE18CEFD23005CCB02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C332BC518D2612B00A55062 /* libz.dylib in Frameworks */,
+				2C332BC118D260FA00A55062 /* libTestFlight.a in Frameworks */,
+				2C21B63D18DAED6D00D7725D /* GameKit.framework in Frameworks */,
+				2CA80DC718CEFD23005CCB02 /* CoreGraphics.framework in Frameworks */,
+				2CA80DC918CEFD23005CCB02 /* UIKit.framework in Frameworks */,
+				2CA80DCB18CEFD24005CCB02 /* SpriteKit.framework in Frameworks */,
+				2CA80DC518CEFD23005CCB02 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CA80DE618CEFD24005CCB02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CA80DEB18CEFD24005CCB02 /* XCTest.framework in Frameworks */,
+				2CA80DED18CEFD24005CCB02 /* UIKit.framework in Frameworks */,
+				2CA80DEC18CEFD24005CCB02 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C21B62618D4D84F00D7725D /* Enemy */ = {
+			isa = PBXGroup;
+			children = (
+				2C21B63218D708F000D7725D /* Enemy.h */,
+				2C21B63318D708F000D7725D /* Enemy.m */,
+				2C332BB418D2363E00A55062 /* BlueJay.h */,
+				2C332BB518D2363E00A55062 /* BlueJay.m */,
+				2C21B61E18D377C200D7725D /* Bug.h */,
+				2C21B61F18D377C200D7725D /* Bug.m */,
+				2C332BB718D23D4E00A55062 /* Crab.h */,
+				2C332BB818D23D4E00A55062 /* Crab.m */,
+			);
+			name = Enemy;
+			sourceTree = "<group>";
+		};
+		2C21B62718D4D85F00D7725D /* Decorate */ = {
+			isa = PBXGroup;
+			children = (
+				2C21B62318D4B9BA00D7725D /* Bushes.h */,
+				2C21B62418D4B9BA00D7725D /* Bushes.m */,
+				2C332BAD18D2295300A55062 /* Tree.h */,
+				2C332BAE18D2295300A55062 /* Tree.m */,
+				2C332BB018D22A1300A55062 /* Rock.h */,
+				2C332BB118D22A1300A55062 /* Rock.m */,
+				2C332BC618D2662F00A55062 /* GrassSmall.h */,
+				2C332BC718D2662F00A55062 /* GrassSmall.m */,
+				2C332BC918D2669600A55062 /* GrassLarge.h */,
+				2C332BCA18D2669600A55062 /* GrassLarge.m */,
+				2C332BCC18D267FB00A55062 /* CloudSmall.h */,
+				2C332BCD18D267FB00A55062 /* CloudSmall.m */,
+				2C332BCF18D2680B00A55062 /* CloudLarge.h */,
+				2C332BD018D2680B00A55062 /* CloudLarge.m */,
+				2C21B62F18D706C600D7725D /* Decorate.h */,
+				2C21B63018D706C600D7725D /* Decorate.m */,
+			);
+			name = Decorate;
+			sourceTree = "<group>";
+		};
+		2C21B62818D509F900D7725D /* Emitter */ = {
+			isa = PBXGroup;
+			children = (
+				2C881BC818D2EAAA0055A2DB /* Smoke.h */,
+				2C881BC918D2EAAA0055A2DB /* Smoke.m */,
+				2C114C1218D2ED970086FCF9 /* Emitter.h */,
+				2C114C1318D2ED970086FCF9 /* Emitter.m */,
+				2C21B63518D88ECD00D7725D /* Rain.h */,
+				2C21B63618D88ECD00D7725D /* Rain.m */,
+			);
+			name = Emitter;
+			sourceTree = "<group>";
+		};
+		2C21B63B18DA0D0800D7725D /* Obstacle */ = {
+			isa = PBXGroup;
+			children = (
+				2C21B62918D6EB2C00D7725D /* Pipe.h */,
+				2C21B62A18D6EB2C00D7725D /* Pipe.m */,
+				2C21B63818D9B07500D7725D /* Obstacle.h */,
+				2C21B63918D9B07500D7725D /* Obstacle.m */,
+			);
+			name = Obstacle;
+			sourceTree = "<group>";
+		};
+		2C21B64318DAF92C00D7725D /* GameKit */ = {
+			isa = PBXGroup;
+			children = (
+				2C21B64418DAF95D00D7725D /* GameKitHelper.h */,
+				2C21B64518DAF95D00D7725D /* GameKitHelper.m */,
+				2C98DFF518E23A810068553E /* AchievementsHelper.h */,
+				2C98DFF618E23A810068553E /* AchievementsHelper.m */,
+			);
+			name = GameKit;
+			sourceTree = "<group>";
+		};
+		2C332BAC18D2173E00A55062 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		2C332BBA18D260FA00A55062 /* TestFlightSDK3.0.0 */ = {
+			isa = PBXGroup;
+			children = (
+				2C332BBB18D260FA00A55062 /* libTestFlight.a */,
+				2C332BBC18D260FA00A55062 /* README.md */,
+				2C332BBD18D260FA00A55062 /* release_notes.md */,
+				2C332BBE18D260FA00A55062 /* TestFlight+AsyncLogging.h */,
+				2C332BBF18D260FA00A55062 /* TestFlight+ManualSessions.h */,
+				2C332BC018D260FA00A55062 /* TestFlight.h */,
+			);
+			path = TestFlightSDK3.0.0;
+			sourceTree = "<group>";
+		};
+		2C77190918D1A94C00BFB35B /* bg */ = {
+			isa = PBXGroup;
+			children = (
+				2C332BA818D216FC00A55062 /* bg1@2x~ipad.png */,
+				2C332BA918D216FC00A55062 /* bg2@2x~ipad.png */,
+				2C77190A18D1A94C00BFB35B /* bg1@2x~iphone.png */,
+				2C77190B18D1A94C00BFB35B /* bg2@2x~iphone.png */,
+			);
+			path = bg;
+			sourceTree = "<group>";
+		};
+		2C881BB518D2E8D40055A2DB /* EmitterNode */ = {
+			isa = PBXGroup;
+			children = (
+				2C881BB618D2E95E0055A2DB /* FireParticle.sks */,
+				2C881BB718D2E95E0055A2DB /* spark.png */,
+				2C881BBA18D2E9C20055A2DB /* Bokeh.sks */,
+				2C881BBB18D2E9C20055A2DB /* bokeh.png */,
+				2C881BBE18D2E9E50055A2DB /* FireFlies.sks */,
+				2C881BC018D2E9FE0055A2DB /* Magic.sks */,
+				2C881BC218D2EA0F0055A2DB /* Rain.sks */,
+				2C881BC418D2EA260055A2DB /* Smoke.sks */,
+				2C881BC618D2EA380055A2DB /* Snow.sks */,
+			);
+			name = EmitterNode;
+			sourceTree = "<group>";
+		};
+		2CA80DB818CEFD23005CCB02 = {
+			isa = PBXGroup;
+			children = (
+				2CA80DCC18CEFD24005CCB02 /* FlyFish */,
+				2CA80DF018CEFD24005CCB02 /* FlyFish */,
+				2CA80DC318CEFD23005CCB02 /* Frameworks */,
+				2CA80DC218CEFD23005CCB02 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2CA80DC218CEFD23005CCB02 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2CA80DC118CEFD23005CCB02 /* FlyFish.app */,
+				2CA80DE918CEFD24005CCB02 /* FlyFishTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2CA80DC318CEFD23005CCB02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C21B63C18DAED6D00D7725D /* GameKit.framework */,
+				2C332BC418D2612B00A55062 /* libz.dylib */,
+				2C332BBA18D260FA00A55062 /* TestFlightSDK3.0.0 */,
+				2CA80DC418CEFD23005CCB02 /* Foundation.framework */,
+				2CA80DC618CEFD23005CCB02 /* CoreGraphics.framework */,
+				2CA80DC818CEFD23005CCB02 /* UIKit.framework */,
+				2CA80DCA18CEFD24005CCB02 /* SpriteKit.framework */,
+				2CA80DEA18CEFD24005CCB02 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2CA80DCC18CEFD24005CCB02 /* FlyFish */ = {
+			isa = PBXGroup;
+			children = (
+				2CB994A018E6F8F700EFB2C6 /* Helpers */,
+				2C21B64318DAF92C00D7725D /* GameKit */,
+				2C881BB518D2E8D40055A2DB /* EmitterNode */,
+				2CA80E2518CEFDF8005CCB02 /* Entity */,
+				2CA80E1018CEFD5C005CCB02 /* Resources */,
+				2C332BAC18D2173E00A55062 /* iPad */,
+				2CA80DD518CEFD24005CCB02 /* AppDelegate.h */,
+				2CA80DD618CEFD24005CCB02 /* AppDelegate.m */,
+				2CA80DD818CEFD24005CCB02 /* Main.storyboard */,
+				2CA80DDB18CEFD24005CCB02 /* ViewController.h */,
+				2CA80DDC18CEFD24005CCB02 /* ViewController.m */,
+				2CA80DDE18CEFD24005CCB02 /* MyScene.h */,
+				2CA80DDF18CEFD24005CCB02 /* MyScene.m */,
+				2CA80DE318CEFD24005CCB02 /* Images.xcassets */,
+				2CA80DCD18CEFD24005CCB02 /* Supporting Files */,
+				2CA80E2618CF01A4005CCB02 /* config.h */,
+			);
+			name = FlyFish;
+			path = "Flappy Fish";
+			sourceTree = "<group>";
+		};
+		2CA80DCD18CEFD24005CCB02 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2CA80DCE18CEFD24005CCB02 /* FlyFish-Info.plist */,
+				2CA80DCF18CEFD24005CCB02 /* InfoPlist.strings */,
+				2C98DFFF18E3A4F20068553E /* Translation.strings */,
+				2CA80DD218CEFD24005CCB02 /* main.m */,
+				2CA80DD418CEFD24005CCB02 /* FlyFish-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2CA80DF018CEFD24005CCB02 /* FlyFish */ = {
+			isa = PBXGroup;
+			children = (
+				2CA80DF618CEFD24005CCB02 /* Flappy_FishTests.m */,
+				2CA80DF118CEFD24005CCB02 /* Supporting Files */,
+			);
+			name = FlyFish;
+			path = "Flappy FishTests";
+			sourceTree = "<group>";
+		};
+		2CA80DF118CEFD24005CCB02 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2CA80DF218CEFD24005CCB02 /* FlyFishTests-Info.plist */,
+				2CA80DF318CEFD24005CCB02 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2CA80E1018CEFD5C005CCB02 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2CEE5A5118D0B18000CA6521 /* Images */,
+				2CA80E3218CF178B005CCB02 /* SKTUtils */,
+				2CA80E1118CEFD71005CCB02 /* Art */,
+				2CA80E1418CEFD71005CCB02 /* Sounds */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2CA80E1118CEFD71005CCB02 /* Art */ = {
+			isa = PBXGroup;
+			children = (
+				2CA80E1218CEFD71005CCB02 /* backgrounds.atlas */,
+				2CA80E1318CEFD71005CCB02 /* sprites.atlas */,
+			);
+			path = Art;
+			sourceTree = "<group>";
+		};
+		2CA80E1418CEFD71005CCB02 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				2C21B62118D37EF500D7725D /* bgMusic.mp3 */,
+				2CA80E1518CEFD71005CCB02 /* coin.wav */,
+				2CA80E1618CEFD71005CCB02 /* ding.wav */,
+				2CA80E1718CEFD71005CCB02 /* falling.wav */,
+				2CA80E1818CEFD71005CCB02 /* flapping.wav */,
+				2CA80E1918CEFD71005CCB02 /* hitGround.wav */,
+				2CA80E1A18CEFD71005CCB02 /* pop.wav */,
+				2CA80E1B18CEFD71005CCB02 /* whack.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		2CA80E2518CEFDF8005CCB02 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				2CB9944718E5D4B700EFB2C6 /* Vitamin */,
+				2C21B63B18DA0D0800D7725D /* Obstacle */,
+				2C21B62818D509F900D7725D /* Emitter */,
+				2C21B62718D4D85F00D7725D /* Decorate */,
+				2C21B62618D4D84F00D7725D /* Enemy */,
+				2CA80E4C18CF6178005CCB02 /* Entity.h */,
+				2CA80E4D18CF6178005CCB02 /* Entity.m */,
+				2CA80E2D18CF0F2F005CCB02 /* Background.h */,
+				2CA80E2E18CF0F2F005CCB02 /* Background.m */,
+				2C4E840418E1712100E49CCD /* FishPlayer.h */,
+				2C4E840518E1712100E49CCD /* FishPlayer.m */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
+		2CA80E3218CF178B005CCB02 /* SKTUtils */ = {
+			isa = PBXGroup;
+			children = (
+				2CA80E3318CF17B0005CCB02 /* SKAction+SKTExtras.h */,
+				2CA80E3418CF17B0005CCB02 /* SKAction+SKTExtras.m */,
+				2CA80E3518CF17B0005CCB02 /* SKAction+SKTSpecialEffects.h */,
+				2CA80E3618CF17B0005CCB02 /* SKAction+SKTSpecialEffects.m */,
+				2CA80E3718CF17B0005CCB02 /* SKEmitterNode+SKTExtras.h */,
+				2CA80E3818CF17B0005CCB02 /* SKEmitterNode+SKTExtras.m */,
+				2CA80E3918CF17B0005CCB02 /* SKNode+SKTDebugDraw.h */,
+				2CA80E3A18CF17B0005CCB02 /* SKNode+SKTDebugDraw.m */,
+				2CA80E3B18CF17B0005CCB02 /* SKNode+SKTExtras.h */,
+				2CA80E3C18CF17B0005CCB02 /* SKNode+SKTExtras.m */,
+				2CA80E3D18CF17B0005CCB02 /* SKTAudio.h */,
+				2CA80E3E18CF17B0005CCB02 /* SKTAudio.m */,
+				2CA80E3F18CF17B0005CCB02 /* SKTEffects.h */,
+				2CA80E4018CF17B0005CCB02 /* SKTEffects.m */,
+				2CA80E4118CF17B0005CCB02 /* SKTTimingFunctions.h */,
+				2CA80E4218CF17B0005CCB02 /* SKTTimingFunctions.m */,
+				2CA80E4318CF17B0005CCB02 /* SKTUtils.h */,
+				2CB9945118E5FB7B00EFB2C6 /* SKNode+Move.h */,
+				2CB9945218E5FB7B00EFB2C6 /* SKNode+Move.m */,
+			);
+			path = SKTUtils;
+			sourceTree = "<group>";
+		};
+		2CB9944718E5D4B700EFB2C6 /* Vitamin */ = {
+			isa = PBXGroup;
+			children = (
+				2CB9944418E5D48300EFB2C6 /* Vitamin.h */,
+				2CB9944518E5D48300EFB2C6 /* Vitamin.m */,
+				2CB9944818E5D4EA00EFB2C6 /* VitaminRed.h */,
+				2CB9944918E5D4EA00EFB2C6 /* VitaminRed.m */,
+				2CB9944B18E5F2B700EFB2C6 /* VitaminGreen.h */,
+				2CB9944C18E5F2B700EFB2C6 /* VitaminGreen.m */,
+			);
+			name = Vitamin;
+			sourceTree = "<group>";
+		};
+		2CB994A018E6F8F700EFB2C6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2C332BA118D2064A00A55062 /* SpritePrinter.h */,
+				2C332BA218D2064A00A55062 /* SpritePrinter.m */,
+				2CB7D04218EB46B8006551DA /* UIImage+AddOn.h */,
+				2CB7D04318EB46B8006551DA /* UIImage+AddOn.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		2CEE5A5118D0B18000CA6521 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2C332BA618D20C7800A55062 /* sprite.atlas */,
+				2C77190918D1A94C00BFB35B /* bg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2CA80DC018CEFD23005CCB02 /* FlyFish */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CA80DFA18CEFD24005CCB02 /* Build configuration list for PBXNativeTarget "FlyFish" */;
+			buildPhases = (
+				2CA80DBD18CEFD23005CCB02 /* Sources */,
+				2CA80DBE18CEFD23005CCB02 /* Frameworks */,
+				2CA80DBF18CEFD23005CCB02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlyFish;
+			productName = "Flappy Fish";
+			productReference = 2CA80DC118CEFD23005CCB02 /* FlyFish.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2CA80DE818CEFD24005CCB02 /* FlyFishTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CA80DFD18CEFD24005CCB02 /* Build configuration list for PBXNativeTarget "FlyFishTests" */;
+			buildPhases = (
+				2CA80DE518CEFD24005CCB02 /* Sources */,
+				2CA80DE618CEFD24005CCB02 /* Frameworks */,
+				2CA80DE718CEFD24005CCB02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2CA80DEF18CEFD24005CCB02 /* PBXTargetDependency */,
+			);
+			name = FlyFishTests;
+			productName = "Flappy FishTests";
+			productReference = 2CA80DE918CEFD24005CCB02 /* FlyFishTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2CA80DB918CEFD23005CCB02 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Ivan Ruiz Monjo";
+				TargetAttributes = {
+					2CA80DC018CEFD23005CCB02 = {
+						DevelopmentTeam = CPTD3EV4H4;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
+					};
+					2CA80DE818CEFD24005CCB02 = {
+						TestTargetID = 2CA80DC018CEFD23005CCB02;
+					};
+				};
+			};
+			buildConfigurationList = 2CA80DBC18CEFD23005CCB02 /* Build configuration list for PBXProject "FlyFish" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				es,
+			);
+			mainGroup = 2CA80DB818CEFD23005CCB02;
+			productRefGroup = 2CA80DC218CEFD23005CCB02 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2CA80DC018CEFD23005CCB02 /* FlyFish */,
+				2CA80DE818CEFD24005CCB02 /* FlyFishTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2CA80DBF18CEFD23005CCB02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C881BC718D2EA380055A2DB /* Snow.sks in Resources */,
+				2CA80E3018CF13D3005CCB02 /* Main.storyboard in Resources */,
+				2C77190D18D1A94C00BFB35B /* bg2@2x~iphone.png in Resources */,
+				2C332BC218D260FA00A55062 /* README.md in Resources */,
+				2C332BC318D260FA00A55062 /* release_notes.md in Resources */,
+				2C77190C18D1A94C00BFB35B /* bg1@2x~iphone.png in Resources */,
+				2C881BBD18D2E9C20055A2DB /* bokeh.png in Resources */,
+				2C881BBC18D2E9C20055A2DB /* Bokeh.sks in Resources */,
+				2CA80E2418CEFD71005CCB02 /* whack.wav in Resources */,
+				2CA80DD118CEFD24005CCB02 /* InfoPlist.strings in Resources */,
+				2C881BC318D2EA0F0055A2DB /* Rain.sks in Resources */,
+				2C332BAB18D216FC00A55062 /* bg2@2x~ipad.png in Resources */,
+				2C881BB818D2E95E0055A2DB /* FireParticle.sks in Resources */,
+				2CA80E1E18CEFD71005CCB02 /* coin.wav in Resources */,
+				2CA80DE418CEFD24005CCB02 /* Images.xcassets in Resources */,
+				2C881BB918D2E95E0055A2DB /* spark.png in Resources */,
+				2CA80E1C18CEFD71005CCB02 /* backgrounds.atlas in Resources */,
+				2C21B62218D37EF500D7725D /* bgMusic.mp3 in Resources */,
+				2CA80E2218CEFD71005CCB02 /* hitGround.wav in Resources */,
+				2C881BC118D2E9FE0055A2DB /* Magic.sks in Resources */,
+				2CA80E2318CEFD71005CCB02 /* pop.wav in Resources */,
+				2CA80E1D18CEFD71005CCB02 /* sprites.atlas in Resources */,
+				2C98DFFD18E3A4F20068553E /* Translation.strings in Resources */,
+				2C881BBF18D2E9E50055A2DB /* FireFlies.sks in Resources */,
+				2CA80E1F18CEFD71005CCB02 /* ding.wav in Resources */,
+				2C881BC518D2EA260055A2DB /* Smoke.sks in Resources */,
+				2CA80E2118CEFD71005CCB02 /* flapping.wav in Resources */,
+				2C332BAA18D216FC00A55062 /* bg1@2x~ipad.png in Resources */,
+				2CA80E2018CEFD71005CCB02 /* falling.wav in Resources */,
+				2C332BA718D20C7800A55062 /* sprite.atlas in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CA80DE718CEFD24005CCB02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CA80DF518CEFD24005CCB02 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2CA80DBD18CEFD23005CCB02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C21B63418D708F000D7725D /* Enemy.m in Sources */,
+				2C332BB218D22A1300A55062 /* Rock.m in Sources */,
+				2CB9944618E5D48300EFB2C6 /* Vitamin.m in Sources */,
+				2C332BD118D2680B00A55062 /* CloudLarge.m in Sources */,
+				2CB7D04418EB46B8006551DA /* UIImage+AddOn.m in Sources */,
+				2C332BCB18D2669600A55062 /* GrassLarge.m in Sources */,
+				2C21B63A18D9B07500D7725D /* Obstacle.m in Sources */,
+				2CA80E4818CF17B0005CCB02 /* SKNode+SKTExtras.m in Sources */,
+				2C332BCE18D267FB00A55062 /* CloudSmall.m in Sources */,
+				2CB9945318E5FB7B00EFB2C6 /* SKNode+Move.m in Sources */,
+				2CA80E4E18CF6178005CCB02 /* Entity.m in Sources */,
+				2CA80DE018CEFD24005CCB02 /* MyScene.m in Sources */,
+				2C21B62B18D6EB2C00D7725D /* Pipe.m in Sources */,
+				2C21B64618DAF95D00D7725D /* GameKitHelper.m in Sources */,
+				2C21B63118D706C600D7725D /* Decorate.m in Sources */,
+				2CA80DDD18CEFD24005CCB02 /* ViewController.m in Sources */,
+				2C21B63718D88ECD00D7725D /* Rain.m in Sources */,
+				2CA80E2F18CF0F2F005CCB02 /* Background.m in Sources */,
+				2CA80DD718CEFD24005CCB02 /* AppDelegate.m in Sources */,
+				2C332BB618D2363E00A55062 /* BlueJay.m in Sources */,
+				2CA80E4B18CF17B0005CCB02 /* SKTTimingFunctions.m in Sources */,
+				2C332BB918D23D4E00A55062 /* Crab.m in Sources */,
+				2C21B62018D377C200D7725D /* Bug.m in Sources */,
+				2CA80DD318CEFD24005CCB02 /* main.m in Sources */,
+				2CA80E4918CF17B0005CCB02 /* SKTAudio.m in Sources */,
+				2C332BAF18D2295300A55062 /* Tree.m in Sources */,
+				2CB9944D18E5F2B700EFB2C6 /* VitaminGreen.m in Sources */,
+				2C98DFF718E23A810068553E /* AchievementsHelper.m in Sources */,
+				2CA80E4A18CF17B0005CCB02 /* SKTEffects.m in Sources */,
+				2CA80E4418CF17B0005CCB02 /* SKAction+SKTExtras.m in Sources */,
+				2C881BCA18D2EAAA0055A2DB /* Smoke.m in Sources */,
+				2CA80E4618CF17B0005CCB02 /* SKEmitterNode+SKTExtras.m in Sources */,
+				2C332BC818D2662F00A55062 /* GrassSmall.m in Sources */,
+				2CB9944A18E5D4EB00EFB2C6 /* VitaminRed.m in Sources */,
+				2C4E840618E1712100E49CCD /* FishPlayer.m in Sources */,
+				2C332BA318D2064A00A55062 /* SpritePrinter.m in Sources */,
+				2CA80E4518CF17B0005CCB02 /* SKAction+SKTSpecialEffects.m in Sources */,
+				2C21B62518D4B9BA00D7725D /* Bushes.m in Sources */,
+				2CA80E4718CF17B0005CCB02 /* SKNode+SKTDebugDraw.m in Sources */,
+				2C114C1418D2ED970086FCF9 /* Emitter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CA80DE518CEFD24005CCB02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CA80DF718CEFD24005CCB02 /* Flappy_FishTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2CA80DEF18CEFD24005CCB02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2CA80DC018CEFD23005CCB02 /* FlyFish */;
+			targetProxy = 2CA80DEE18CEFD24005CCB02 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2C98DFFF18E3A4F20068553E /* Translation.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C98DFFE18E3A4F20068553E /* Base */,
+				2C98E00018E3A5040068553E /* en */,
+				2C98E00118E3A5040068553E /* es */,
+			);
+			name = Translation.strings;
+			sourceTree = "<group>";
+		};
+		2CA80DCF18CEFD24005CCB02 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CA80DD018CEFD24005CCB02 /* en */,
+				2C98DFF818E39FEC0068553E /* es */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2CA80DD818CEFD24005CCB02 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CA80DD918CEFD24005CCB02 /* Base */,
+				2C98DFF918E39FED0068553E /* es */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2CA80DF318CEFD24005CCB02 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CA80DF418CEFD24005CCB02 /* en */,
+				2C98DFFA18E39FED0068553E /* es */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2CA80DF818CEFD24005CCB02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "7153291D-D88F-40FB-9066-EB160F2EDE6B";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2CA80DF918CEFD24005CCB02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PROVISIONING_PROFILE = "7153291D-D88F-40FB-9066-EB160F2EDE6B";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2CA80DFB18CEFD24005CCB02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Flappy Fish/FlyFish-Prefix.pch";
+				INFOPLIST_FILE = "Flappy Fish/FlyFish-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TestFlightSDK3.0.0",
+				);
+				PRODUCT_NAME = FlyFish;
+				PROVISIONING_PROFILE = "7153291D-D88F-40FB-9066-EB160F2EDE6B";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2CA80DFC18CEFD24005CCB02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Flappy Fish/FlyFish-Prefix.pch";
+				INFOPLIST_FILE = "Flappy Fish/FlyFish-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TestFlightSDK3.0.0",
+				);
+				PRODUCT_NAME = FlyFish;
+				PROVISIONING_PROFILE = "7153291D-D88F-40FB-9066-EB160F2EDE6B";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		2CA80DFE18CEFD24005CCB02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Flappy Fish.app/Flappy Fish";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Flappy Fish/Flappy Fish-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Flappy FishTests/FlyFishTests-Info.plist";
+				PRODUCT_NAME = FlyFishTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		2CA80DFF18CEFD24005CCB02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Flappy Fish.app/Flappy Fish";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Flappy Fish/Flappy Fish-Prefix.pch";
+				INFOPLIST_FILE = "Flappy FishTests/FlyFishTests-Info.plist";
+				PRODUCT_NAME = FlyFishTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2CA80DBC18CEFD23005CCB02 /* Build configuration list for PBXProject "FlyFish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CA80DF818CEFD24005CCB02 /* Debug */,
+				2CA80DF918CEFD24005CCB02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CA80DFA18CEFD24005CCB02 /* Build configuration list for PBXNativeTarget "FlyFish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CA80DFB18CEFD24005CCB02 /* Debug */,
+				2CA80DFC18CEFD24005CCB02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CA80DFD18CEFD24005CCB02 /* Build configuration list for PBXNativeTarget "FlyFishTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CA80DFE18CEFD24005CCB02 /* Debug */,
+				2CA80DFF18CEFD24005CCB02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2CA80DB918CEFD23005CCB02 /* Project object */;
+}
