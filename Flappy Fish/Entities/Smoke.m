@@ -14,7 +14,7 @@
 {
     MyScene *_MyScene;
 }
-//TODO SKNode
+
 - (instancetype)initWithScene:(MyScene *)myScene
 {
     CGSize size = CGSizeMake(kSmokeWidth, kSmokeHeight);

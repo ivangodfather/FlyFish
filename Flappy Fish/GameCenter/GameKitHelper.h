@@ -6,6 +6,9 @@
 //  Copyright (c) 2014 Ivan Ruiz Monjo. All rights reserved.
 //
 
+static const float kNumberOfPlayers = 10;
+static const float kNumberOfFriends = 10;
+
 @import GameKit;
 extern NSString *const PresentAuthenticationViewController;
 extern NSString *const PlayerAuthenticated;
@@ -13,7 +16,7 @@ extern NSString *const PlayerAuthenticated;
 
 @property (nonatomic, readonly) UIViewController *authenticationViewController;
 @property (nonatomic, readonly) NSError *lastError;
-@property (nonatomic, readonly) NSArray *topScores;
+@property (nonatomic, readonly) NSMutableSet *topScores;
 
 + (instancetype)sharedGameKitHelper;
 - (void)authenticateLocalPlayer;

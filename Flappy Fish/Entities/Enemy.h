@@ -14,5 +14,8 @@
 + (Enemy *)spawnWithScene:(MyScene *)myScenes;
 - (void)applyActionsToPlayer:(Enemy *)enemy;
 - (int)force;
++ (CGFloat)spawnDelay;
++ (Enemy *)lastAdded;
++ (void)setLastAdded:(Enemy *)obstacle;
 
 @end

@@ -7,8 +7,9 @@
 //
 
 
-@interface Background : SKSpriteNode
+@interface Background : SKNode
 
-- (instancetype)initWithTexture:(SKTexture *)texture position:(CGPoint)position scene:(MyScene *)myScene;
+- (instancetype)initWithScene:(MyScene *)scene;
+- (void)updateBackground;
 
 @end

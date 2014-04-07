@@ -25,4 +25,17 @@
     return self;
 }
 
+- (void)moveWithScene:(MyScene *)myScene;
+{
+    CGFloat duration = MAX(kCloudSmallMoveDuration - (((float)myScene.score)/30),2);
+    SKAction *sequence = [SKAction sequence:@[[SKAction moveToX:-100 duration:duration],[SKAction removeFromParent]]];
+    sequence.timingMode = SKActionTimingEaseIn;
+    [self runAction:sequence withKey:@"move"];
+}
+
+-(float)moveDuration
+{
+    return kCloudSmallMoveDuration;
+}
+
 @end

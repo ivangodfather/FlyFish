@@ -9,11 +9,14 @@
 static const float kEmitterMoveDuration = 4;
 
 
-@interface Emitter : SKEmitterNode
+@interface Emitter : SKNode
 
 - (instancetype)initWithScene:(MyScene *)myScene;
 - (void)applyActionsToPlayer;
 + (Emitter *)spawnWithScene:(MyScene *)myScene;
-
++ (Emitter *)lastAdded;
++ (void)setLastAdded:(Emitter *)emitter;
++ (CGFloat)spawnDelay;
+-(float)moveDuration;
 
 @end

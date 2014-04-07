@@ -7,15 +7,16 @@
 //
 
 #import "SKNode+Move.h"
-#import "Enemy.h"
+#import "Entity.h"
 
 @implementation SKNode (Move)
 
 - (void)moveWithScene:(MyScene *)myScene;
 {
-    CGFloat duration = kMoveDuration * myScene.speed;
+    Entity *entity = (Entity *)self;
+    CGFloat duration = MAX([entity moveDuration] - (((float)myScene.score)/30),2);
     SKAction *sequence = [SKAction sequence:@[[SKAction moveToX:-100 duration:duration],[SKAction removeFromParent]]];
-    sequence.timingMode = SKActionTimingEaseIn;
+    sequence.timingMode = SKActionTimingLinear;
     [self runAction:sequence withKey:@"move"];
 }
 

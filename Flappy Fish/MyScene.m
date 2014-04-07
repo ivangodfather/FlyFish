@@ -25,18 +25,17 @@
 #import "GameKitHelper.h"
 #import "PlayerResult.h"
 
+@import GameController;
 
 @implementation MyScene
 {
-    //Game
     GameState _gameState;
-    NSTimeInterval _dt, _lastUpdateTime;
-    
-    NSMutableDictionary *_lastObjects;
     Obstacle *_lastObstacleAdded;
     Decorate *_lastDecorateAdded;
     Enemy *_lastEnemyAdded;
     Emitter *_lastEmitterAdded;
+    GCController *_gameController;
+    GCExtendedGamepad *_profile;
 }
 
 - (id)initWithSize:(CGSize)size gameState:(GameState)gameState delegate:(id<MySceneDelegate>)delegate {
@@ -46,8 +45,43 @@
         _delegate = delegate;
         [self setupScene];
         self.physicsWorld.contactDelegate = self;
+        
+        
+        if ([GCController class])
+        {
+            NSNotificationCenter* center = [NSNotificationCenter defaultCenter];
+            
+            [center addObserver:self selector:@selector(setupControllers:)
+                            name:GCControllerDidConnectNotification object:nil];
+            [center addObserver:self selector:@selector(setupControllers:)
+                            name:GCControllerDidDisconnectNotification object:nil];
+            [self setupControllers:nil];
+            
+        }
+        
     }
     return self;
+}
+
+- (void)setupControllers:(NSNotification *)notification
+{
+    NSArray *controllerArray = [GCController controllers];
+    if (controllerArray.count > 0) {
+        _gameController = [[GCController controllers] lastObject];
+
+    }
+}
+
+- (void)readControls
+{
+    _profile = _gameController.extendedGamepad;
+    if (_profile.buttonA.isPressed | _profile.buttonB.isPressed | _profile.buttonX.isPressed | _profile.leftTrigger.isPressed | _profile.leftShoulder.isPressed) {
+        [self.player flapFish];
+        SKLabelNode *two = [SKLabelNode labelNodeWithFontNamed:kFontName];
+        [_worldNode addChild:two];
+        two.text = @"Je";
+        two.position = CGPointMake(100, 150);
+    }
 }
 
 #pragma mark Setup
@@ -59,16 +93,10 @@
                                                  name:PlayerAuthenticated
                                                object:nil];
     
-    _lastDecorateAdded = [Decorate new];
-    _lastEmitterAdded = [Emitter new];
-    _lastEnemyAdded = [Enemy new];
-    _lastObstacleAdded = [Obstacle new];
-    
-    _lastObjects = [@{@"_lastObstacleAdded": _lastObstacleAdded,@"_lastDecorateAdded":_lastDecorateAdded,@"_lastEnemyAdded":_lastEnemyAdded,@"_lastEmitterAdded":_lastEmitterAdded} mutableCopy];
     [SpritePrinter setupScene:self];
     if (_gameState == GameStatePlay) {
-        for (NSString *obj in @[@"Decorate",@"Vitamin",@"Enemy",@"Emitter",@"Obstacle"]) {
-            [self spawner:obj];
+        for (Class class in @[[Decorate class],[Enemy class],[Emitter class],[Obstacle class]]) {
+            [self spawner:class withDecrement:0];
         }
         [_player flapFish];
     } else if (_gameState == GameStateTutorial) {
@@ -84,6 +112,8 @@
 - (void)setScore:(int)score
 {
     _score = score;
+    if ((score % 5) == 0 && score) [self updateVelocity];
+
     _scoreLabel.text = [NSString stringWithFormat:@"%d",score];
     SKAction *scale = [SKAction scaleBy:1.3 duration:0.2];
     SKAction *scaleRev = [scale reversedAction];
@@ -94,6 +124,13 @@
     [self runAction:_soundCoin];
 }
 
+- (void)updateVelocity
+{
+    [self removeActionForKey:@"spawnObstacle"];
+    CGFloat decrement = MIN(1.4, ((float)self.score)/40);
+
+    [self spawner:[Obstacle class] withDecrement:decrement];
+}
 
 #pragma mark GamePlay
 
@@ -105,6 +142,7 @@
     switch (_gameState) {
         case GameStatePlay:
             [_player flapFish];
+            [self readControls];
             break;
         case GameStateShowingScore:
             [self touchInScore:touchLocation];
@@ -138,35 +176,39 @@
     [self.view presentScene:newScene transition:transition];
 }
 
-- (void)spawner:(NSString *)name
+- (void)spawner:(Class)class withDecrement:(CGFloat)decrement
 {
     SKAction *spawn = [SKAction runBlock:^{
-        Class theClass = NSClassFromString(name);
-        id obj = [theClass spawnWithScene:self];
-        NSString *key = [NSString stringWithFormat:@"_last%@Added",name];
-        id lastObjAdded = [_lastObjects objectForKey:key];
+        Class theClass = class;
+        id newObj = [theClass spawnWithScene:self];
+
+        id lastObjAdded = [theClass lastAdded];
         
-        if ([obj isKindOfClass:[Obstacle class]]) {
-            [self insertScoreWithObstacle:obj];
+        if ([newObj isKindOfClass:[Obstacle class]]) {
+            [self insertScoreWithObstacle:newObj];
         }
         if ([lastObjAdded isKindOfClass:[Obstacle class]]) {
-            [[obj class] moveNewObstacle:obj fromLastObstacle:lastObjAdded withScene:self];
+            [[newObj class] moveNewObstacle:newObj fromLastObstacle:lastObjAdded withScene:self];
         }
-        if (obj) {
-            _lastObjects[key] = obj;
-            [_worldNode addChild:obj];
+        if (!newObj && ([theClass class] == [Obstacle class])) {
+            newObj = [Vitamin spawnWithScene:self];
+        }
+        if (newObj) {
+            [theClass setLastAdded:newObj];
+            [_worldNode addChild:newObj];
         }
     }];
+    Class theClass = class;
     [self runAction:[SKAction repeatActionForever: [SKAction sequence:
-                                                    @[[SKAction waitForDuration:kVitaminSpawnDelay],spawn]]] withKey:[NSString stringWithFormat:@"spawn%@",name]];
+                                                    @[[SKAction waitForDuration:[theClass spawnDelay] - decrement],spawn]]] withKey:NSStringFromClass(class)];
 }
 
 - (void)insertScoreWithObstacle:(Obstacle *)obstacle
 {
     NSUInteger obstacleNum = [Obstacle numberOfInstances];
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"score.value == %lu",obstacleNum];
-    NSArray *scoresOnObstacleArray = [[GameKitHelper sharedGameKitHelper].topScores filteredArrayUsingPredicate:pred];
-    PlayerResult *playerResult = [scoresOnObstacleArray lastObject];
+    NSSet *scoresOnObstacleSet = [[GameKitHelper sharedGameKitHelper].topScores filteredSetUsingPredicate:pred];
+    PlayerResult *playerResult = [scoresOnObstacleSet anyObject];  //TODO Coger el del amigo!! :-)
     if (playerResult) [obstacle addPlayerResult:playerResult];
 }
 
@@ -228,7 +270,8 @@
 
 - (void)gameStatePlay
 {
-    [self updateBackground];
+    [self readControls];
+    [_background updateBackground];
     [self updatePlayer];
     [self updateScore];
 }
@@ -236,13 +279,13 @@
 - (void)gameStateFalling
 {
     [[GameKitHelper sharedGameKitHelper] reportScore:self.score forLeaderboardID:kLeaderBoardID];
-    [self removeActionForKey:@"spawnPipe"];
-    [self removeActionForKey:@"spawnDecorate"];
-    [self removeActionForKey:@"spawnEnemy"];
-    [self removeActionForKey:@"spawnEmitter"];
-    [self removeActionForKey:@"spawnVitamin"];
-    [self removeActionForKey:@"spawnObstacle"];
+    
+    for (Class class in @[[Decorate class],[Enemy class],[Emitter class],[Obstacle class], [Vitamin class]]) {
+        [self removeActionForKey:NSStringFromClass(class)];
+    }
+    
     [self runAction:_soundWhack];
+    
     SKAction *shake = [SKAction skt_screenShakeWithNode:_worldNode amount:CGPointMake(0, 70) oscillations:10 duration:1];
     [_worldNode runAction:shake];
     [_player removeAllActions];
@@ -271,7 +314,7 @@
 
 - (void)gameStateTutorial
 {
-    [self updateBackground];
+    [_background updateBackground];
     
 }
 
@@ -279,8 +322,6 @@
 {
     
 }
-
-
 
 #pragma mark Update
 
@@ -312,36 +353,15 @@
     }
 }
 
-- (void)updateBackground
-{
-    [_worldNode enumerateChildNodesWithName:@"background" usingBlock:^(SKNode *node, BOOL *stop) {
-        SKSpriteNode *background = (SKSpriteNode *)node;
-        CGPoint amountToMove = CGPointMake(-kBackgroundSpeed * _dt, 0);
-        background.position = CGPointAdd(background.position, amountToMove);
-        if (background.position.x < -background.size.width) {
-            background.position = CGPointAdd(background.position, CGPointMake(2 * background.size.width, 0));
-        }
-    }];
-}
-
 - (void)updatePlayer
 {
-    CGPoint gravity = CGPointMake(0, kPlayerGravity);
-    CGPoint gravityStep = CGPointMultiplyScalar(gravity, _dt);
-    _player.velocity = CGPointAdd(_player.velocity, gravityStep);
-    CGPoint velocityStep = CGPointMultiplyScalar(_player.velocity, _dt);
-    _player.position = CGPointAdd(_player.position, velocityStep);
-    if (_player.position.y < _player.size.height/2) {
-        _player.position = CGPointMake(_player.position.x, _player.size.height/2);
-    }
-    int maxY = _background.position.y - _player.size.height/2;
-    if (_player.position.y > maxY) {
-        _player.position = CGPointMake(_player.position.x, maxY);
-    }
+    [_player fishGravity];
     if (_player.position.x < -_player.size.width/2) {
         _gameState = GameStateFalling;
     }
 }
+
+
 
 - (void)updateScore
 {

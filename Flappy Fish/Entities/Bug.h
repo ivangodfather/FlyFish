@@ -9,7 +9,7 @@
 static const float kBugMarginWidth = 0.8;
 static const float kBugMarginHeight = 0.8;
 static const float kBugMoveDuration = 4;
-static const float kBugForce = 50;
+static const float kBugForce = 100;
 
 
 #import "Enemy.h"

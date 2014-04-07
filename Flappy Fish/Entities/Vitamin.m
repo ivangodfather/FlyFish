@@ -10,6 +10,8 @@
 #import "VitaminRed.h"
 #import "VitaminGreen.h"
 
+static Vitamin *_lastAdded;
+
 @implementation Vitamin
 {
     MyScene *_MyScene;
@@ -48,5 +50,21 @@
         }
     }
     return vitamin;
+}
+
++ (CGFloat)spawnDelay
+{
+    return kVitaminSpawnDelay;
+}
+
+
++ (Vitamin *)lastAdded
+{
+    return _lastAdded;
+}
+
++ (void)setLastAdded:(Vitamin *)vitamin
+{
+    _lastAdded = vitamin;
 }
 @end

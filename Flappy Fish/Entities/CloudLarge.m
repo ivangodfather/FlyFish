@@ -24,4 +24,9 @@
     return self;
 }
 
+-(float)moveDuration
+{
+    return kCloudLargeMoveDuration;
+}
+
 @end

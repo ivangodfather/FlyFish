@@ -19,7 +19,6 @@
     if (self = [super initWithTexture:texture scene:myScene]) {
         _MyScene = myScene;
         self.name = @"bluejay";
-        self.scale = 0.5;
         float min = self.size.height*3.5;
         float max = myScene.size.height - self.size.height/2;
         self.position = CGPointMake(myScene.size.width + self.size.width/2, RandomFloatRange(min,max));

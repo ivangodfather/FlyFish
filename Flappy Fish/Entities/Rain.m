@@ -24,8 +24,7 @@
                                                                       ofType:@"sks"]];
         emitterNode.particlePositionRange = CGVectorMake(myScene.size.width, 0);
         if (IPAD) {
-           // emitterNode.particleLifetime = emitterNode.particleLifetime * 2;
-            //emitterNode.size = CGSizeMake(size.width * 2, size.height * 2);
+            emitterNode.particleLifetime = emitterNode.particleLifetime * 2;
         }
         
         [self addChild:emitterNode];

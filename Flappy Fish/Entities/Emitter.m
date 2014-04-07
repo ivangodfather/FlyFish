@@ -10,6 +10,8 @@
 #import "Smoke.h"
 #import "Rain.h"
 
+static Emitter *_lastAdded;
+
 @implementation Emitter
 {
     MyScene *_MyScene;
@@ -23,6 +25,10 @@
         self.zPosition = LayerEmitter;
     }
     return self;
+}
++ (CGFloat)spawnDelay
+{
+    return kEmitterSpawnDelay;
 }
 
 - (void)applyActionsToPlayer { //Abstrac method
@@ -45,6 +51,21 @@
         }
     }
     return emitter;
+}
+
++ (Emitter *)lastAdded
+{
+    return _lastAdded;
+}
+
++ (void)setLastAdded:(Emitter *)emitter
+{
+    _lastAdded = emitter;
+}
+
+-(float)moveDuration
+{
+    return kEmitterMoveDuration;
 }
 
 @end

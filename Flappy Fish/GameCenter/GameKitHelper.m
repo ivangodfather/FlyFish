@@ -49,18 +49,32 @@ NSString *const PlayerAuthenticated = @"player_authenticated";
             [self setAuthenticationViewController:viewController];
         } else if([GKLocalPlayer localPlayer].isAuthenticated) {
             _enableGameCenter = YES;
-            [self getTopScoresWithNumOfScores:25
-                                  playerScope:GKLeaderboardPlayerScopeGlobal
-                                    timeScope:GKLeaderboardTimeScopeAllTime
-                             forLeaderboardID:kLeaderBoardID
-                        withCompletionHandler:^(NSArray *scoresArray) {
-                            _topScores = scoresArray;
-                        }];
+            [self getTopScores];
             [[NSNotificationCenter defaultCenter] postNotificationName:PlayerAuthenticated object:self];
         } else {
             _enableGameCenter = NO;
         }
     };
+}
+
+- (void)getTopScores
+{
+    _topScores = [NSMutableSet set];
+    [self getTopScoresWithNumOfScores:kNumberOfPlayers
+                          playerScope:GKLeaderboardPlayerScopeFriendsOnly
+                            timeScope:GKLeaderboardTimeScopeAllTime
+                     forLeaderboardID:kLeaderBoardID
+                withCompletionHandler:^(NSArray *scoresFriendsArray) {
+                    [_topScores addObjectsFromArray:scoresFriendsArray];
+                    [self getTopScoresWithNumOfScores:kNumberOfFriends
+                                          playerScope:GKLeaderboardPlayerScopeGlobal
+                                            timeScope:GKLeaderboardTimeScopeAllTime
+                                     forLeaderboardID:kLeaderBoardID
+                                withCompletionHandler:^(NSArray *scoresAllArray) {
+                                    [_topScores addObjectsFromArray:scoresAllArray];
+                                }];
+                }];
+    
 }
 
 - (void)setAuthenticationViewController:(UIViewController *)authenticationViewController
@@ -145,33 +159,33 @@ NSString *const PlayerAuthenticated = @"player_authenticated";
     leaderBoard.range = NSMakeRange(1, numOfScores);
     
     //Fetch the request
+    NSMutableArray *array = [NSMutableArray array];
     [leaderBoard loadScoresWithCompletionHandler:^(NSArray *scores, NSError *error) {
         if (error) {
             [self setLastError:error];
         }
-        completionHandler([self arrayToArrayWithDict:scores]);
+        __block int finished = 0;
+        for (GKScore *score in scores) {
+            PlayerResult *playerResult = [PlayerResult new];
+            [GKPlayer loadPlayersForIdentifiers:@[score.playerID] withCompletionHandler:^(NSArray *players, NSError *error) {
+                finished++;
+                GKPlayer *player = [players lastObject];
+                playerResult.player = player;
+                [player loadPhotoForSize:GKPhotoSizeNormal withCompletionHandler:^(UIImage *photo, NSError *error) {
+                    if (photo) playerResult.photo = photo;
+                }];
+                if (finished  == scores.count) {
+                    completionHandler(array);
+                }
+            }];
+            playerResult.score = score;
+            [array addObject:playerResult];
+        }
+        
     }];
     
 }
 
-- (NSMutableArray *)arrayToArrayWithDict:(NSArray *)arrayOld
-{
-    NSMutableArray *array = [NSMutableArray array];
-    for (GKScore *score in arrayOld) {
-        PlayerResult *playerResult = [PlayerResult new];
-        [GKPlayer loadPlayersForIdentifiers:@[score.playerID] withCompletionHandler:^(NSArray *players, NSError *error) {
-            GKPlayer *player = [players lastObject]; //TODO puede devolver más de 1 player por score.
-            if (!player) return;
-            playerResult.player = player;
-            [player loadPhotoForSize:GKPhotoSizeNormal withCompletionHandler:^(UIImage *photo, NSError *error) {
-                if (photo) playerResult.photo = photo;
-            }];
-        }];
-        playerResult.score = score;
-        [array addObject:playerResult];
-    }
-    return array;
-}
 
 
 @end

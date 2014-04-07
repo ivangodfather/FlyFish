@@ -7,6 +7,7 @@
 //
 
 #import "PlayerResult.h"
+@import GameKit;
 
 @implementation PlayerResult
 
@@ -18,5 +19,13 @@
     playerResult.photo = photo;
     return playerResult;
 }
+
+- (BOOL)isEqual:(id)object
+{
+    return (([object isKindOfClass:[self class]]) && ([_player.playerID  isEqualToString:((PlayerResult *)object).player.playerID]));
+}
+
+- (NSUInteger)hash { return [self.player.playerID hash]; }
+
 
 @end

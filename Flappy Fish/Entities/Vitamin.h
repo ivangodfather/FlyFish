@@ -16,7 +16,8 @@ static const float kVitaminMoveDuration = 4;
 - (instancetype)initWithTexture:(SKTexture *)texture scene:(MyScene *)myScene;
 - (void)applyActionsToPlayer;
 + (Vitamin *)spawnWithScene:(MyScene *)myScene;
-
-
++ (Vitamin *)lastAdded;
++ (void)setLastAdded:(Vitamin *)vitamin;
++ (CGFloat)spawnDelay;
 
 @end

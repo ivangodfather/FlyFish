@@ -15,4 +15,5 @@ static const float kDecorateMoveDuration = 4;
 - (void)attachRandomPhysicsBodyToSprite;
 - (void)addRadmonImpulse;
 - (void)attachTrianglePhysicsBodyToSprite;
+- (float)moveDuration;
 @end

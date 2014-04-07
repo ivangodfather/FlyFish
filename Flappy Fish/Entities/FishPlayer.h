@@ -13,6 +13,7 @@
 
 - (void)dead;
 - (void)flapFish;
+- (void)fishGravity;
 - (instancetype)initWithScene:(MyScene *)scene;
 
 @property (nonatomic) CGPoint velocity;

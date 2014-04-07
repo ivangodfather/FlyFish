@@ -7,7 +7,10 @@
 //
 
 #import "Decorate.h"
+static const float kCloudSmallMoveDuration = 6;
+
 
 @interface CloudSmall : Decorate
 - (instancetype)initWithScene:(MyScene *)myScene;
+-(float)moveDuration;
 @end

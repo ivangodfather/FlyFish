@@ -10,10 +10,11 @@
 #import "Pipe.h"
 #import "UIImage+AddOn.h"
 #import "PlayerResult.h"
+#import "Vitamin.h"
 
 
-//TODO RETOCAR 25
-static NSUInteger instances = 0;
+static NSUInteger _instances = 0;
+static Obstacle *_lastAdded;
 
 @implementation Obstacle
 {
@@ -24,7 +25,7 @@ static NSUInteger instances = 0;
 {
     if (self = [super initWithTexture:texture scene:myScene]) {
         _MyScene = myScene;
-        instances++;
+        _instances++;
         self.zPosition = LayerObstacle;
         self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.size];
         [self skt_attachDebugRectWithSize:self.size color:[SKColor redColor]];
@@ -36,6 +37,11 @@ static NSUInteger instances = 0;
         
     }
     return self;
+}
+
++ (CGFloat)spawnDelay
+{
+    return kObstacleSpawnDelay;
 }
 
 - (void)addPlayerResult:(PlayerResult *)playerResult
@@ -71,6 +77,7 @@ static NSUInteger instances = 0;
 + (Obstacle *)spawnWithScene:(MyScene *)myScene
 {
     Obstacle *obstacle;
+
     if(RandomFloat() < kObstacleProbability) {
         ObstacleType randomObstacle = (ObstacleType) (arc4random() % (int) ObstacleTypeMax);
         switch (randomObstacle) {
@@ -80,6 +87,8 @@ static NSUInteger instances = 0;
             default:
                 break;
         }
+    } else {
+        _lastAdded = nil;
     }
     return obstacle;
 }
@@ -90,12 +99,22 @@ static NSUInteger instances = 0;
 }
 
 + (NSUInteger) numberOfInstances {
-    return instances;
+    return _instances;
 }
 
 + (void)resetNumberOfInstances
 {
-    instances = 0;
+    _instances = 0;
+}
+
++ (Obstacle *)lastAdded
+{
+    return _lastAdded;
+}
+
++ (void)setLastAdded:(Obstacle *)obstacle
+{
+    _lastAdded = obstacle;
 }
 
 

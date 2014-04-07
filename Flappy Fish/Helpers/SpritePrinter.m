@@ -9,6 +9,7 @@
 #import "SpritePrinter.h"
 #import "FishPlayer.h"
 #import "SKTAudio.h"
+#import "Background.h"
 
 
 @implementation SpritePrinter
@@ -21,30 +22,18 @@
     myScene->_worldNode = [SKNode node];
     [myScene addChild:myScene->_worldNode];
     
-    [SpritePrinter setupBackground:myScene];
     myScene->_atlas = [SKTextureAtlas atlasNamed:@"sprite"];
     myScene->_noOfCollisionsWithEnemies = 0;
-    myScene.speed = 1.0;
-    //[[SKTAudio sharedInstance] playBackgroundMusic:@"bgMusic.mp3"];
+    [[SKTAudio sharedInstance] playBackgroundMusic:@"bgMusic.mp3"];
     myScene.name = @"scene";
     myScene.physicsWorld.gravity = CGVectorMake(0, 0);
     
-    
     myScene.player = [[FishPlayer alloc] initWithScene:myScene];
+    myScene->_background = [[Background alloc] initWithScene:myScene];
+    [myScene->_worldNode addChild:myScene->_background];
     [myScene->_worldNode addChild:myScene.player];
     [SpritePrinter setupSounds:myScene];
     [SpritePrinter setupScoreLabel:myScene];
-}
-
-+ (void)setupBackground:(MyScene *)myScene
-{
-    for (int i = 1; i < 3; i++) {
-        myScene->_background = [SKSpriteNode spriteNodeWithTexture:[SKTexture textureWithImageNamed:[NSString stringWithFormat:@"bg%d",i]]];
-        myScene->_background.name = @"background";
-        myScene->_background.position = CGPointMake((i-1) * myScene->_background.texture.size.width, myScene.size.height);
-        myScene->_background.anchorPoint = CGPointMake(0, 1);
-        [myScene->_worldNode addChild:myScene->_background];
-    }
 }
 
 + (void)setupSounds:(MyScene *)myScene

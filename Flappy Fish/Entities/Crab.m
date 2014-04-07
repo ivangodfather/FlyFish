@@ -21,7 +21,6 @@
         self.name = @"crab";
         float min = self.size.height/2;
         float max = self.size.height * 1.3;
-        self.scale = 0.5;
         self.position = CGPointMake(myScene.size.width + self.size.width/2, RandomFloatRange(min,max));
         [self attachPhysicsBodyToSpriteWithMarginWidth:kCrabWidthMargin marginHeight:kCrabHeightMargin];
         NSArray *textures = [NSArray arrayWithObjects:

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "TestFlight.h"
+@import GameController;
 
 @implementation AppDelegate
 
@@ -16,9 +17,6 @@
     [TestFlight takeOff:testFlightKey];
     return YES;
 }
-
-
-
 
 
 - (void)applicationWillResignActive:(UIApplication *)application

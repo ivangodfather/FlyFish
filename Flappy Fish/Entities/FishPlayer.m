@@ -7,6 +7,7 @@
 //
 
 #import "FishPlayer.h"
+#import "Background.h"
 
 @implementation FishPlayer
 {
@@ -24,7 +25,7 @@
         self.name = @"fish";
         self.zPosition = LayerPlayer;
         self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.size];
-        self.physicsBody.dynamic = NO;
+        self.physicsBody.dynamic = YES;
         self.physicsBody.categoryBitMask = PhysicsCategoryPlayer;
         self.physicsBody.collisionBitMask = PhysicsCategoryObstacle;
         self.physicsBody.contactTestBitMask = PhysicsCategoryEnemy | PhysicsCategoryEmitter | PhysicsCategoryVitamin | PhysicsCategoryObstacle;
@@ -69,7 +70,7 @@
         return;
     }
     if (self.position.x < kStartPosition) {
-        float impulseX = (kStartPosition - self.position.x)/100;
+        float impulseX = (kStartPosition - self.position.x)/50;
         CGVector vector = CGVectorMake(impulseX, 0);
         [self.physicsBody applyImpulse:vector];
     }
@@ -91,6 +92,22 @@
     SKAction *animateTextures = [SKAction animateWithTextures:textures timePerFrame:0.5];
     SKAction *moveFoward = [SKAction moveBy:CGVectorMake(self.size.width*3, 0) duration:1];
     [self runAction:[SKAction group:@[moveFoward,moveUpDown, animateTextures]]];
+}
+
+- (void)fishGravity
+{
+    CGPoint gravity = CGPointMake(0, kPlayerGravity);
+    CGPoint gravityStep = CGPointMultiplyScalar(gravity, _MyScene->_dt);
+    self.velocity = CGPointAdd(self.velocity, gravityStep);
+    CGPoint velocityStep = CGPointMultiplyScalar(self.velocity, _MyScene->_dt);
+    self.position = CGPointAdd(self.position, velocityStep);
+    if (self.position.y < self.size.height/2) {
+        self.position = CGPointMake(self.position.x, self.size.height/2);
+    }
+    int maxY = _MyScene.size.height - self.size.height/2;
+    if (self.position.y > maxY) {
+        self.position = CGPointMake(self.position.x, maxY);
+    }
 }
 
 @end

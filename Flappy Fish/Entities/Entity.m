@@ -69,4 +69,9 @@
     self.physicsBody.dynamic = NO;
 }
 
+-(float)moveDuration
+{
+    return kMoveDuration;
+}
+
 @end

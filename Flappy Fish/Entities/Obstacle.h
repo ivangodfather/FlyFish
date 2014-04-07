@@ -17,4 +17,8 @@
 + (void)moveNewObstacle:(Obstacle *)newObstacle fromLastObstacle:(Obstacle *)lastObstacle withScene:(MyScene *)scene;
 + (NSUInteger)numberOfInstances;
 + (void)resetNumberOfInstances;
++ (Obstacle *)lastAdded;
++ (void)setLastAdded:(Obstacle *)obstacle;
++ (CGFloat)spawnDelay;
+
 @end

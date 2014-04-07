@@ -12,6 +12,8 @@
 #import "Crab.h"
 #import "FishPlayer.h"
 
+static Enemy *_lastAdded;
+
 @implementation Enemy
 {
     MyScene *_MyScene;
@@ -64,6 +66,21 @@
 - (int)force
 {
     return 70;
+}
+
++ (CGFloat)spawnDelay
+{
+    return kEnemySpawnDelay;
+}
+
++ (Enemy *)lastAdded
+{
+    return _lastAdded;
+}
+
++ (void)setLastAdded:(Enemy *)enemy
+{
+    _lastAdded = enemy;
 }
 
 @end

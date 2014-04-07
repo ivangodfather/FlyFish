@@ -344,13 +344,6 @@
 			name = GameKit;
 			sourceTree = "<group>";
 		};
-		2C332BAC18D2173E00A55062 /* iPad */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = iPad;
-			sourceTree = "<group>";
-		};
 		2C332BBA18D260FA00A55062 /* TestFlightSDK3.0.0 */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,7 +426,6 @@
 				2C881BB518D2E8D40055A2DB /* EmitterNode */,
 				2CA80E2518CEFDF8005CCB02 /* Entity */,
 				2CA80E1018CEFD5C005CCB02 /* Resources */,
-				2C332BAC18D2173E00A55062 /* iPad */,
 				2CA80DD518CEFD24005CCB02 /* AppDelegate.h */,
 				2CA80DD618CEFD24005CCB02 /* AppDelegate.m */,
 				2CA80DD818CEFD24005CCB02 /* Main.storyboard */,
@@ -844,8 +836,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ivan Ruiz Monjo (52TF5EV3KZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ivan Ruiz Monjo (52TF5EV3KZ)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -884,8 +876,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ivan Ruiz Monjo (52TF5EV3KZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ivan Ruiz Monjo (52TF5EV3KZ)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -907,8 +899,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ivan Ruiz Monjo (52TF5EV3KZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ivan Ruiz Monjo (52TF5EV3KZ)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Flappy Fish/FlyFish-Prefix.pch";
 				INFOPLIST_FILE = "Flappy Fish/FlyFish-Info.plist";
@@ -930,8 +922,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ivan Ruiz Monjo (52TF5EV3KZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ivan Ruiz Monjo (52TF5EV3KZ)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Flappy Fish/FlyFish-Prefix.pch";
 				INFOPLIST_FILE = "Flappy Fish/FlyFish-Info.plist";

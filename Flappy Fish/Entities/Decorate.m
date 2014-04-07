@@ -15,6 +15,8 @@
 #import "Bushes.h"
 #import "CloudSmall.h"
 
+static Decorate *_lastAdded;
+
 @implementation Decorate
 
 - (instancetype)initWithTexture:(SKTexture *)texture scene:(MyScene *)myScene
@@ -24,6 +26,11 @@
         self.position = CGPointMake(myScene.size.width + self.size.width/2, self.size.height/2);
     }
     return self;
+}
+
++ (CGFloat)spawnDelay
+{
+    return kDecorateSpawnDelay;
 }
 
 + (Decorate *)spawnWithScene:(MyScene *)myScene
@@ -59,4 +66,14 @@
     return decorate;
 }
 
+
++ (Decorate *)lastAdded
+{
+    return _lastAdded;
+}
+
++ (void)setLastAdded:(Decorate *)decorate
+{
+    _lastAdded = decorate;
+}
 @end
