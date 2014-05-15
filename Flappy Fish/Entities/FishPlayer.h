@@ -7,7 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-#define kStartPosition _MyScene.size.width*0.25
+#define kStartPosition _myScene.size.width*0.25
 
 @interface FishPlayer : SKSpriteNode
 

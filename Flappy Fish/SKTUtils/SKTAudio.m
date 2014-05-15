@@ -60,7 +60,14 @@
 - (void)pauseBackgroundMusic {
   if (self.backgroundMusicPlayer.playing) {
     [self.backgroundMusicPlayer pause];
+  } else {
+      [self.backgroundMusicPlayer play];
   }
+}
+
+- (BOOL)isPlaying
+{
+    return self.backgroundMusicPlayer.playing;
 }
 
 - (void)resumeBackgroundMusic {

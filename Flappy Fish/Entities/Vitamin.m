@@ -9,17 +9,18 @@
 #import "Vitamin.h"
 #import "VitaminRed.h"
 #import "VitaminGreen.h"
+#import "VitaminBlue.h"
 
 static Vitamin *_lastAdded;
 
 @implementation Vitamin
 {
-    MyScene *_MyScene;
+    MyScene *_myScene;
 }
 
 - (instancetype)initWithTexture:(SKTexture *)texture scene:(MyScene *)myScene
 {
-    _MyScene = myScene;
+    _myScene = myScene;
     if (self = [super initWithTexture:texture scene:myScene]) {
         self.zPosition = LayerVitamin;
         self.position = CGPointMake(myScene.size.width + self.size.width/2, RandomFloatRange(self.size.height, myScene.size.height-self.size.height));
@@ -45,6 +46,10 @@ static Vitamin *_lastAdded;
                 break;
             case VitaminTypeGreen:
                 vitamin = [[VitaminGreen alloc] initWithScene:myScene];
+                break;
+            case VitaminTypeBlue:
+                vitamin = [[VitaminBlue alloc] initWithScene:myScene];
+                break;
             default:
                 break;
         }

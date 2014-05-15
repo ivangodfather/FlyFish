@@ -68,6 +68,7 @@ typedef NS_ENUM (int, VitaminType)
 {
     VitaminTypeRed,
     VitaminTypeGreen,
+    VitaminTypeBlue,
     VitaminTypeMax,
 };
 
@@ -86,22 +87,21 @@ typedef NS_ENUM (int, EmitterType)
 
 /* ### GAMEPLAY ### */
 
-static const float kMoveDuration = 4; //4
+static const float kMoveDuration = 3; //4
 
-static const float kObstacleSpawnDelay = 2; //0.5
-static const float kObstacleProbability = 0.9;
+static const float kObstacleSpawnDelay = 1.5;
+static const float kObstacleProbability = 0.8;
 
-static const float kEnemyProbability = 0.5; //0.8
-static const float kEnemySpawnDelay = 0.5;  //1
+static const float kEnemySpawnDelay = 1;
 
-static const float kEmitterProbability = 0.5; //0.7
-static const float kEmitterSpawnDelay = 2;  //2
+static const float kEmitterProbability = 0.2; //0.7
+static const float kEmitterSpawnDelay = 3.3;  //2
 
-static const float kDecorateProbability = 0.8;  //0.8
-static const float kDecorateSpawnDelay = 1.5;  //1.5
+static const float kDecorateProbability = 0.8;
+static const float kDecorateSpawnDelay = 1.3;
 
-static const float kVitaminProbability = 1;
-static const float kVitaminSpawnDelay = 3;
+static const float kVitaminProbability = 0.8;
+static const float kVitaminSpawnDelay = 2;
 
 
 

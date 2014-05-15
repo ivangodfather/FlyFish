@@ -31,7 +31,7 @@
 - (void)playBackgroundMusic:(NSString *)filename;
 - (void)pauseBackgroundMusic;
 - (void)resumeBackgroundMusic;
-
+- (BOOL)isPlaying;
 - (void)playSoundEffect:(NSString *)filename;
 
 @end

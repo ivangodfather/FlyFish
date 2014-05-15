@@ -7,6 +7,8 @@
 //
 
 #import "Decorate.h"
+static const float kBushesMoveDuration = 5;
+
 
 @interface Bushes : Decorate
 

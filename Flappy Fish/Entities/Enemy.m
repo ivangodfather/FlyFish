@@ -16,14 +16,14 @@ static Enemy *_lastAdded;
 
 @implementation Enemy
 {
-    MyScene *_MyScene;
+    MyScene *_myScene;
 }
 
 - (instancetype)initWithTexture:(SKTexture *)texture scene:(MyScene *)myScene
 {
     if (self = [super initWithTexture:texture scene:myScene]) {
         self.zPosition = LayerEnemy;
-        _MyScene = myScene;
+        _myScene = myScene;
     }
     return self;
 }
@@ -39,10 +39,12 @@ static Enemy *_lastAdded;
 + (Enemy *)spawnWithScene:(MyScene *)myScene
 {
     Enemy *enemy;
-    if(RandomFloat() < kEnemyProbability) {
+    float prob = (float)myScene.score/100;
+    if(RandomFloat() < prob) {
         EnemyType randomEnemy = (EnemyType) (arc4random() % (int) EnemyTypeMax);
         switch (randomEnemy) {
             case EnemyTypeBlueJay:
+                if (RandomFloat() > 0.2) break;
                 enemy = [[BlueJay alloc] initWithScene:myScene];
                 break;
             case EnemyTypeCrab:
@@ -60,7 +62,7 @@ static Enemy *_lastAdded;
 
 - (void)applyActionsToPlayer:(Enemy *)enemy
 {
-    _MyScene.player.velocity = CGPointMake(-enemy.force, 50);
+    _myScene.player.velocity = CGPointMake(-enemy.force, 50);
 }
 
 - (int)force

@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Ivan Ruiz Monjo. All rights reserved.
 //
 
+#define SOUND_IS_ON ([[NSUserDefaults standardUserDefaults] integerForKey:@"sound"])
+
 #import "Obstacle.h"
 #import "Enemy.h"
 #import "Decorate.h"
@@ -40,7 +42,7 @@
 
 - (id)initWithSize:(CGSize)size gameState:(GameState)gameState delegate:(id<MySceneDelegate>)delegate {
     if (self = [super initWithSize:size]) {
-        [self.view setIgnoresSiblingOrder:YES]; //TODO VERFIFICAR MEJORA RENDIMIENTO! :_D
+        [self.view setIgnoresSiblingOrder:YES];
         _gameState = gameState;
         _delegate = delegate;
         [self setupScene];
@@ -61,6 +63,14 @@
         
     }
     return self;
+}
+
+- (void)updateVelocity
+{
+    [self removeActionForKey:@"spawnObstacle"];
+    CGFloat decrement = MIN(0.85, ((float)self.score)/60);
+    NSLog(@"dec:%f",decrement);
+    [self spawner:[Obstacle class] withDecrement:decrement];
 }
 
 - (void)setupControllers:(NSNotification *)notification
@@ -121,15 +131,7 @@
     SKAction *flash = [SKAction skt_screenZoomWithNode:_scoreLabel amount:CGPointMake(0.1, 0.1) oscillations:3 duration:3];
     [_scoreLabel runAction:repeat];
     [_scoreLabel runAction:flash];
-    [self runAction:_soundCoin];
-}
-
-- (void)updateVelocity
-{
-    [self removeActionForKey:@"spawnObstacle"];
-    CGFloat decrement = MIN(1.4, ((float)self.score)/40);
-
-    [self spawner:[Obstacle class] withDecrement:decrement];
+    if SOUND_IS_ON [self runAction:_soundCoin];
 }
 
 #pragma mark GamePlay
@@ -141,21 +143,75 @@
     
     switch (_gameState) {
         case GameStatePlay:
-            [_player flapFish];
-            [self readControls];
+            [self touchInGamePlay:touchLocation];
             break;
         case GameStateShowingScore:
             [self touchInScore:touchLocation];
             break;
         case GameStateTutorial:
-            [self newGame];
+            [self touchInTutorial:touchLocation];
+            break;
         default:
             break;
     }
 }
 
+- (void)touchInGamePlay:(CGPoint)touchLocation
+{
+    if ([self touchInMusicButton:touchLocation]) return;
+    if ([self touchInSoundButton:touchLocation]) return;
+    [_player flapFish];
+    [self readControls];
+}
+
+- (void)touchInTutorial:(CGPoint)touchLocation
+{
+    if ([self touchInMusicButton:touchLocation]) return;
+    if ([self touchInSoundButton:touchLocation]) return;
+    [self newGame];
+}
+
+- (BOOL)touchInMusicButton:(CGPoint)touchLocation
+{
+    if (CGRectContainsPoint([_worldNode childNodeWithName:@"musicButton"].frame, touchLocation)) {
+        SKSpriteNode *musicButton = (SKSpriteNode *)[_worldNode childNodeWithName:@"musicButton"];
+        if ([[SKTAudio sharedInstance] isPlaying]) {
+            [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"music"];
+            musicButton.texture = [SKTexture textureWithImageNamed:@"music-off"];
+            [[SKTAudio sharedInstance] pauseBackgroundMusic];
+        } else {
+            musicButton.texture = [SKTexture textureWithImageNamed:@"music-on"];
+            [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"music"];
+            [[SKTAudio sharedInstance] playBackgroundMusic:@"bgMusic.mp3"];
+        }
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        return true;
+    }
+    return false;
+}
+
+- (BOOL)touchInSoundButton:(CGPoint)touchLocation
+{
+    if (CGRectContainsPoint([_worldNode childNodeWithName:@"soundButton"].frame, touchLocation)) {
+        SKSpriteNode *soundButton = (SKSpriteNode *)[_worldNode childNodeWithName:@"soundButton"];
+        if ([[NSUserDefaults standardUserDefaults] integerForKey:@"sound"]) {
+            [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"sound"];
+            soundButton.texture = [SKTexture textureWithImageNamed:@"sound-off"];
+        } else {
+            soundButton.texture = [SKTexture textureWithImageNamed:@"sound-on"];
+            [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"sound"];
+        }
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        return true;
+    }
+    return false;
+}
+
+
 - (void)touchInScore:(CGPoint)touchLocation
 {
+    if ([self touchInMusicButton:touchLocation]) return;
+    if ([self touchInSoundButton:touchLocation]) return;
     if (CGRectContainsPoint([_worldNode childNodeWithName:@"okButton"].frame, touchLocation)) {
         [self newGame];
     }
@@ -208,7 +264,7 @@
     NSUInteger obstacleNum = [Obstacle numberOfInstances];
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"score.value == %lu",obstacleNum];
     NSSet *scoresOnObstacleSet = [[GameKitHelper sharedGameKitHelper].topScores filteredSetUsingPredicate:pred];
-    PlayerResult *playerResult = [scoresOnObstacleSet anyObject];  //TODO Coger el del amigo!! :-)
+    PlayerResult *playerResult = [scoresOnObstacleSet anyObject];
     if (playerResult) [obstacle addPlayerResult:playerResult];
 }
 
@@ -251,7 +307,7 @@
     enemy.physicsBody.contactTestBitMask = 0;
     _noOfCollisionsWithEnemies++;
     [self reportAchievementsForGameState];
-    [self runAction:_soundWhack];
+    if SOUND_IS_ON [self runAction:_soundWhack];
     [enemy applyActionsToPlayer:enemy];
 }
 
@@ -284,7 +340,7 @@
         [self removeActionForKey:NSStringFromClass(class)];
     }
     
-    [self runAction:_soundWhack];
+    if SOUND_IS_ON [self runAction:_soundWhack];
     
     SKAction *shake = [SKAction skt_screenShakeWithNode:_worldNode amount:CGPointMake(0, 70) oscillations:10 duration:1];
     [_worldNode runAction:shake];

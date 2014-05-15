@@ -7,7 +7,7 @@
 //
 
 #import "Decorate.h"
-static const float kCloudLargeMoveDuration = 5;
+static const float kCloudLargeMoveDuration = 6;
 
 @interface CloudLarge : Decorate
 - (instancetype)initWithScene:(MyScene *)myScene;

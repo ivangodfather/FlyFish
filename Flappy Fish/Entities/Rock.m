@@ -7,6 +7,8 @@
 //
 
 #import "Rock.h"
+static const float kRockMoveDuration = 5;
+
 
 @implementation Rock
 
@@ -18,6 +20,11 @@
         self.scale = RandomFloatRange(0.5,1);
     }
     return self;
+}
+
+-(float)moveDuration
+{
+    return kRockMoveDuration;
 }
 
 @end

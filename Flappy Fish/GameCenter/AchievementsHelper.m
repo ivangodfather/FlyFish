@@ -15,7 +15,6 @@ static NSString* const kCollision30Enemy = @"colisionar_30_enemigos";
 
 
 @implementation AchievementsHelper
-//TODO  y quizá 10 in a row? o hacer leaderboard de veces jugado? creo que 10 in a row 20 in a row etc.
 + (GKAchievement *)achievementWithCollisions:(int)collisions
 {
     GKAchievement *collisionAchievement;

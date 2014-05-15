@@ -9,7 +9,7 @@
 static const float kCrabWidthMargin = 1;
 static const float kCrabHeightMargin = 1;
 static const float kCrabMoveDuration = 3;
-static const float kCrabForce = 80;
+static const float kCrabForce = 300;
 
 
 #import "Enemy.h"

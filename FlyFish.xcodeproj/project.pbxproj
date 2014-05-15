@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C09189418F9A9C4004120FA /* bgMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C09189318F9A9C4004120FA /* bgMusic.mp3 */; };
+		2C09189818F9AED2004120FA /* coin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C09189518F9AED2004120FA /* coin.mp3 */; };
+		2C09189A18F9AED2004120FA /* hit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C09189718F9AED2004120FA /* hit.mp3 */; };
+		2C09189C18F9B158004120FA /* flap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C09189B18F9B158004120FA /* flap.mp3 */; };
 		2C114C1418D2ED970086FCF9 /* Emitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C114C1318D2ED970086FCF9 /* Emitter.m */; };
 		2C21B62018D377C200D7725D /* Bug.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21B61F18D377C200D7725D /* Bug.m */; };
-		2C21B62218D37EF500D7725D /* bgMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C21B62118D37EF500D7725D /* bgMusic.mp3 */; };
 		2C21B62518D4B9BA00D7725D /* Bushes.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21B62418D4B9BA00D7725D /* Bushes.m */; };
 		2C21B62B18D6EB2C00D7725D /* Pipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21B62A18D6EB2C00D7725D /* Pipe.m */; };
 		2C21B63118D706C600D7725D /* Decorate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C21B63018D706C600D7725D /* Decorate.m */; };
@@ -64,15 +67,6 @@
 		2CA80DED18CEFD24005CCB02 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA80DC818CEFD23005CCB02 /* UIKit.framework */; };
 		2CA80DF518CEFD24005CCB02 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CA80DF318CEFD24005CCB02 /* InfoPlist.strings */; };
 		2CA80DF718CEFD24005CCB02 /* Flappy_FishTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA80DF618CEFD24005CCB02 /* Flappy_FishTests.m */; };
-		2CA80E1C18CEFD71005CCB02 /* backgrounds.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2CA80E1218CEFD71005CCB02 /* backgrounds.atlas */; };
-		2CA80E1D18CEFD71005CCB02 /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2CA80E1318CEFD71005CCB02 /* sprites.atlas */; };
-		2CA80E1E18CEFD71005CCB02 /* coin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CA80E1518CEFD71005CCB02 /* coin.wav */; };
-		2CA80E1F18CEFD71005CCB02 /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CA80E1618CEFD71005CCB02 /* ding.wav */; };
-		2CA80E2018CEFD71005CCB02 /* falling.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CA80E1718CEFD71005CCB02 /* falling.wav */; };
-		2CA80E2118CEFD71005CCB02 /* flapping.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CA80E1818CEFD71005CCB02 /* flapping.wav */; };
-		2CA80E2218CEFD71005CCB02 /* hitGround.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CA80E1918CEFD71005CCB02 /* hitGround.wav */; };
-		2CA80E2318CEFD71005CCB02 /* pop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CA80E1A18CEFD71005CCB02 /* pop.wav */; };
-		2CA80E2418CEFD71005CCB02 /* whack.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CA80E1B18CEFD71005CCB02 /* whack.wav */; };
 		2CA80E2F18CF0F2F005CCB02 /* Background.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA80E2E18CF0F2F005CCB02 /* Background.m */; };
 		2CA80E3018CF13D3005CCB02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA80DD818CEFD24005CCB02 /* Main.storyboard */; };
 		2CA80E4418CF17B0005CCB02 /* SKAction+SKTExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA80E3418CF17B0005CCB02 /* SKAction+SKTExtras.m */; };
@@ -90,6 +84,7 @@
 		2CB9944A18E5D4EB00EFB2C6 /* VitaminRed.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9944918E5D4EA00EFB2C6 /* VitaminRed.m */; };
 		2CB9944D18E5F2B700EFB2C6 /* VitaminGreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9944C18E5F2B700EFB2C6 /* VitaminGreen.m */; };
 		2CB9945318E5FB7B00EFB2C6 /* SKNode+Move.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9945218E5FB7B00EFB2C6 /* SKNode+Move.m */; };
+		2CE7B8EF192216B9002DA002 /* VitaminBlue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE7B8EE192216B9002DA002 /* VitaminBlue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,11 +98,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C09189318F9A9C4004120FA /* bgMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgMusic.mp3; sourceTree = "<group>"; };
+		2C09189518F9AED2004120FA /* coin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coin.mp3; sourceTree = "<group>"; };
+		2C09189718F9AED2004120FA /* hit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hit.mp3; sourceTree = "<group>"; };
+		2C09189B18F9B158004120FA /* flap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = flap.mp3; sourceTree = "<group>"; };
 		2C114C1218D2ED970086FCF9 /* Emitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Emitter.h; path = Entities/Emitter.h; sourceTree = "<group>"; };
 		2C114C1318D2ED970086FCF9 /* Emitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Emitter.m; path = Entities/Emitter.m; sourceTree = "<group>"; };
 		2C21B61E18D377C200D7725D /* Bug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bug.h; path = Entities/Bug.h; sourceTree = "<group>"; };
 		2C21B61F18D377C200D7725D /* Bug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bug.m; path = Entities/Bug.m; sourceTree = "<group>"; };
-		2C21B62118D37EF500D7725D /* bgMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgMusic.mp3; sourceTree = "<group>"; };
 		2C21B62318D4B9BA00D7725D /* Bushes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bushes.h; path = Entities/Bushes.h; sourceTree = "<group>"; };
 		2C21B62418D4B9BA00D7725D /* Bushes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bushes.m; path = Entities/Bushes.m; sourceTree = "<group>"; };
 		2C21B62918D6EB2C00D7725D /* Pipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pipe.h; path = Entities/Pipe.h; sourceTree = "<group>"; };
@@ -196,15 +194,6 @@
 		2CA80DF218CEFD24005CCB02 /* FlyFishTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlyFishTests-Info.plist"; sourceTree = "<group>"; };
 		2CA80DF418CEFD24005CCB02 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2CA80DF618CEFD24005CCB02 /* Flappy_FishTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Flappy_FishTests.m; sourceTree = "<group>"; };
-		2CA80E1218CEFD71005CCB02 /* backgrounds.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = backgrounds.atlas; sourceTree = "<group>"; };
-		2CA80E1318CEFD71005CCB02 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
-		2CA80E1518CEFD71005CCB02 /* coin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = coin.wav; sourceTree = "<group>"; };
-		2CA80E1618CEFD71005CCB02 /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding.wav; sourceTree = "<group>"; };
-		2CA80E1718CEFD71005CCB02 /* falling.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = falling.wav; sourceTree = "<group>"; };
-		2CA80E1818CEFD71005CCB02 /* flapping.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = flapping.wav; sourceTree = "<group>"; };
-		2CA80E1918CEFD71005CCB02 /* hitGround.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hitGround.wav; sourceTree = "<group>"; };
-		2CA80E1A18CEFD71005CCB02 /* pop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pop.wav; sourceTree = "<group>"; };
-		2CA80E1B18CEFD71005CCB02 /* whack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = whack.wav; sourceTree = "<group>"; };
 		2CA80E2618CF01A4005CCB02 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		2CA80E2D18CF0F2F005CCB02 /* Background.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Background.h; path = Entities/Background.h; sourceTree = "<group>"; };
 		2CA80E2E18CF0F2F005CCB02 /* Background.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Background.m; path = Entities/Background.m; sourceTree = "<group>"; };
@@ -239,6 +228,8 @@
 		2CB9944C18E5F2B700EFB2C6 /* VitaminGreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VitaminGreen.m; path = Entities/VitaminGreen.m; sourceTree = "<group>"; };
 		2CB9945118E5FB7B00EFB2C6 /* SKNode+Move.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKNode+Move.h"; sourceTree = "<group>"; };
 		2CB9945218E5FB7B00EFB2C6 /* SKNode+Move.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKNode+Move.m"; sourceTree = "<group>"; };
+		2CE7B8ED192216B9002DA002 /* VitaminBlue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VitaminBlue.h; path = Entities/VitaminBlue.h; sourceTree = "<group>"; };
+		2CE7B8EE192216B9002DA002 /* VitaminBlue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VitaminBlue.m; path = Entities/VitaminBlue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +260,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C09189218F9A9C4004120FA /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				2C09189B18F9B158004120FA /* flap.mp3 */,
+				2C09189518F9AED2004120FA /* coin.mp3 */,
+				2C09189718F9AED2004120FA /* hit.mp3 */,
+				2C09189318F9A9C4004120FA /* bgMusic.mp3 */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		2C21B62618D4D84F00D7725D /* Enemy */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,36 +477,11 @@
 		2CA80E1018CEFD5C005CCB02 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2C09189218F9A9C4004120FA /* Sound */,
 				2CEE5A5118D0B18000CA6521 /* Images */,
 				2CA80E3218CF178B005CCB02 /* SKTUtils */,
-				2CA80E1118CEFD71005CCB02 /* Art */,
-				2CA80E1418CEFD71005CCB02 /* Sounds */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		2CA80E1118CEFD71005CCB02 /* Art */ = {
-			isa = PBXGroup;
-			children = (
-				2CA80E1218CEFD71005CCB02 /* backgrounds.atlas */,
-				2CA80E1318CEFD71005CCB02 /* sprites.atlas */,
-			);
-			path = Art;
-			sourceTree = "<group>";
-		};
-		2CA80E1418CEFD71005CCB02 /* Sounds */ = {
-			isa = PBXGroup;
-			children = (
-				2C21B62118D37EF500D7725D /* bgMusic.mp3 */,
-				2CA80E1518CEFD71005CCB02 /* coin.wav */,
-				2CA80E1618CEFD71005CCB02 /* ding.wav */,
-				2CA80E1718CEFD71005CCB02 /* falling.wav */,
-				2CA80E1818CEFD71005CCB02 /* flapping.wav */,
-				2CA80E1918CEFD71005CCB02 /* hitGround.wav */,
-				2CA80E1A18CEFD71005CCB02 /* pop.wav */,
-				2CA80E1B18CEFD71005CCB02 /* whack.wav */,
-			);
-			path = Sounds;
 			sourceTree = "<group>";
 		};
 		2CA80E2518CEFDF8005CCB02 /* Entity */ = {
@@ -560,6 +537,8 @@
 				2CB9944918E5D4EA00EFB2C6 /* VitaminRed.m */,
 				2CB9944B18E5F2B700EFB2C6 /* VitaminGreen.h */,
 				2CB9944C18E5F2B700EFB2C6 /* VitaminGreen.m */,
+				2CE7B8ED192216B9002DA002 /* VitaminBlue.h */,
+				2CE7B8EE192216B9002DA002 /* VitaminBlue.m */,
 			);
 			name = Vitamin;
 			sourceTree = "<group>";
@@ -671,33 +650,27 @@
 			files = (
 				2C881BC718D2EA380055A2DB /* Snow.sks in Resources */,
 				2CA80E3018CF13D3005CCB02 /* Main.storyboard in Resources */,
+				2C09189418F9A9C4004120FA /* bgMusic.mp3 in Resources */,
 				2C77190D18D1A94C00BFB35B /* bg2@2x~iphone.png in Resources */,
 				2C332BC218D260FA00A55062 /* README.md in Resources */,
 				2C332BC318D260FA00A55062 /* release_notes.md in Resources */,
 				2C77190C18D1A94C00BFB35B /* bg1@2x~iphone.png in Resources */,
+				2C09189818F9AED2004120FA /* coin.mp3 in Resources */,
 				2C881BBD18D2E9C20055A2DB /* bokeh.png in Resources */,
 				2C881BBC18D2E9C20055A2DB /* Bokeh.sks in Resources */,
-				2CA80E2418CEFD71005CCB02 /* whack.wav in Resources */,
 				2CA80DD118CEFD24005CCB02 /* InfoPlist.strings in Resources */,
 				2C881BC318D2EA0F0055A2DB /* Rain.sks in Resources */,
 				2C332BAB18D216FC00A55062 /* bg2@2x~ipad.png in Resources */,
 				2C881BB818D2E95E0055A2DB /* FireParticle.sks in Resources */,
-				2CA80E1E18CEFD71005CCB02 /* coin.wav in Resources */,
 				2CA80DE418CEFD24005CCB02 /* Images.xcassets in Resources */,
 				2C881BB918D2E95E0055A2DB /* spark.png in Resources */,
-				2CA80E1C18CEFD71005CCB02 /* backgrounds.atlas in Resources */,
-				2C21B62218D37EF500D7725D /* bgMusic.mp3 in Resources */,
-				2CA80E2218CEFD71005CCB02 /* hitGround.wav in Resources */,
 				2C881BC118D2E9FE0055A2DB /* Magic.sks in Resources */,
-				2CA80E2318CEFD71005CCB02 /* pop.wav in Resources */,
-				2CA80E1D18CEFD71005CCB02 /* sprites.atlas in Resources */,
+				2C09189C18F9B158004120FA /* flap.mp3 in Resources */,
+				2C09189A18F9AED2004120FA /* hit.mp3 in Resources */,
 				2C98DFFD18E3A4F20068553E /* Translation.strings in Resources */,
 				2C881BBF18D2E9E50055A2DB /* FireFlies.sks in Resources */,
-				2CA80E1F18CEFD71005CCB02 /* ding.wav in Resources */,
 				2C881BC518D2EA260055A2DB /* Smoke.sks in Resources */,
-				2CA80E2118CEFD71005CCB02 /* flapping.wav in Resources */,
 				2C332BAA18D216FC00A55062 /* bg1@2x~ipad.png in Resources */,
-				2CA80E2018CEFD71005CCB02 /* falling.wav in Resources */,
 				2C332BA718D20C7800A55062 /* sprite.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -743,6 +716,7 @@
 				2C21B62018D377C200D7725D /* Bug.m in Sources */,
 				2CA80DD318CEFD24005CCB02 /* main.m in Sources */,
 				2CA80E4918CF17B0005CCB02 /* SKTAudio.m in Sources */,
+				2CE7B8EF192216B9002DA002 /* VitaminBlue.m in Sources */,
 				2C332BAF18D2295300A55062 /* Tree.m in Sources */,
 				2CB9944D18E5F2B700EFB2C6 /* VitaminGreen.m in Sources */,
 				2C98DFF718E23A810068553E /* AchievementsHelper.m in Sources */,

@@ -49,8 +49,8 @@
 + (void)moveNewObstacle:(Obstacle *)newObstacle fromLastObstacle:(Obstacle *)lastObstacle withScene:(MyScene *)scene
 {
     CGFloat distanceObstacles = (newObstacle.position.x - lastObstacle.position.x);
-    if (distanceObstacles < scene.player.size.width*2.5) {
-        CGFloat amountToMove = RandomFloatRange(-scene.player.size.height*0.8, scene.player.size.height*0.8);
+    if (distanceObstacles < scene.player.size.width*3) {
+        CGFloat amountToMove = RandomFloatRange(-scene.player.size.height*3.5, scene.player.size.height*3.5);
         CGFloat newY = MIN(MAX(lastObstacle.position.y + amountToMove, -newObstacle.size.height/2), newObstacle.size.height*0.4);
         newObstacle.position = CGPointMake(newObstacle.position.x, newY);
     }

@@ -10,12 +10,12 @@
 
 @implementation CloudSmall
 {
-    MyScene *_MyScene;
+    MyScene *_myScene;
 }
 
 - (instancetype)initWithScene:(MyScene *)myScene
 {
-    _MyScene = myScene;
+    _myScene = myScene;
     SKTexture *texture = [myScene->_atlas textureNamed:@"cloudsmall"];
     if (self = [super initWithTexture:texture scene:myScene]) {
         self.name = @"cloudsmall";
@@ -23,14 +23,6 @@
         self.position = CGPointMake(myScene.size.width + self.texture.size.width/2, myScene.size.height - RandomFloatRange(self.size.height/2, self.size.height*2.5));
     }
     return self;
-}
-
-- (void)moveWithScene:(MyScene *)myScene;
-{
-    CGFloat duration = MAX(kCloudSmallMoveDuration - (((float)myScene.score)/30),2);
-    SKAction *sequence = [SKAction sequence:@[[SKAction moveToX:-100 duration:duration],[SKAction removeFromParent]]];
-    sequence.timingMode = SKActionTimingEaseIn;
-    [self runAction:sequence withKey:@"move"];
 }
 
 -(float)moveDuration

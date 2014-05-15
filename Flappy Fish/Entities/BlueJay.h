@@ -9,7 +9,7 @@
 static const float kBlueJayMarginWidth = 0.8;
 static const float kBlueJayMarginHeight = 0.8;
 static const float kBlueJayMoveDuration = 1.5;
-static const float kBlueJayForce = 120;
+static const float kBlueJayForce = 400;
 
 #import "Enemy.h"
 

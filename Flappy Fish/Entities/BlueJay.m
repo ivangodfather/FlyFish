@@ -10,14 +10,14 @@
 
 @implementation BlueJay
 {
-    MyScene *_MyScene;
+    MyScene *_myScene;
 }
 
 - (instancetype)initWithScene:(MyScene *)myScene
 {
     SKTexture *texture = [myScene->_atlas textureNamed:@"bluejay1"];
     if (self = [super initWithTexture:texture scene:myScene]) {
-        _MyScene = myScene;
+        _myScene = myScene;
         self.name = @"bluejay";
         float min = self.size.height*3.5;
         float max = myScene.size.height - self.size.height/2;

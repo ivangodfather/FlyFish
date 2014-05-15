@@ -10,7 +10,7 @@
 
 @implementation CloudLarge
 {
-    MyScene *_MyScene;
+    MyScene *_myScene;
 }
 
 - (instancetype)initWithScene:(MyScene *)myScene

@@ -11,7 +11,7 @@
 
 @implementation VitaminGreen
 {
-    MyScene *_MyScene;
+    MyScene *_myScene;
 }
 
 
@@ -19,7 +19,7 @@
 {
     SKTexture *texture = [myScene->_atlas textureNamed:@"vitamin_green"];
     if (self = [super initWithTexture:texture scene:myScene]) {
-        _MyScene = myScene;
+        _myScene = myScene;
     }
     return self;
 }
@@ -27,7 +27,7 @@
 - (void)applyActionsToPlayer
 {
     [self removeFromParent];
-    for (SKNode *node in _MyScene->_worldNode.children) {
+    for (SKNode *node in _myScene->_worldNode.children) {
         if ([[node class] isSubclassOfClass:[Entity class]]) {
             SKAction *action = [node actionForKey:@"move"];
             action.speed = 2;

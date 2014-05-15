@@ -11,12 +11,12 @@
 
 @implementation Background
 {
-    MyScene *_MyScene;
+    MyScene *_myScene;
 }
 
 - (instancetype)initWithScene:(MyScene *)myScene
 {
-    _MyScene = myScene;
+    _myScene = myScene;
     if (self = [super init]) {
         for (int i = 1; i < 3; i++) {
             SKSpriteNode *bg = [[SKSpriteNode alloc] initWithImageNamed:[NSString stringWithFormat:@"bg%d",i]];
@@ -34,11 +34,11 @@
 
 - (void)updateBackground
 {
-    [_MyScene->_background enumerateChildNodesWithName:@"background" usingBlock:^(SKNode *node, BOOL *stop) {
+    [_myScene->_background enumerateChildNodesWithName:@"background" usingBlock:^(SKNode *node, BOOL *stop) {
         SKSpriteNode *background = (SKSpriteNode *)node;
-        CGPoint amountToMove = CGPointMake(-kBackgroundSpeed * _MyScene->_dt, 0);
+        CGPoint amountToMove = CGPointMake(-kBackgroundSpeed * _myScene->_dt, 0);
         background.position = CGPointAdd(background.position, amountToMove);
-        if (background.position.x < -_MyScene.size.width) {
+        if (background.position.x < -_myScene.size.width) {
             background.position = CGPointAdd(background.position, CGPointMake(2 * background.size.width, 0));
         }
         

@@ -18,13 +18,13 @@ static Obstacle *_lastAdded;
 
 @implementation Obstacle
 {
-    MyScene *_MyScene;
+    MyScene *_myScene;
 }
 
 - (instancetype)initWithTexture:(SKTexture *)texture scene:(MyScene *)myScene
 {
     if (self = [super initWithTexture:texture scene:myScene]) {
-        _MyScene = myScene;
+        _myScene = myScene;
         _instances++;
         self.zPosition = LayerObstacle;
         self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.size];
@@ -53,11 +53,11 @@ static Obstacle *_lastAdded;
     
     SKTexture *texture;
     CGSize size = IPAD?CGSizeMake(kAvatarSize, kAvatarSize):CGSizeMake(kAvatarSize/1.5, kAvatarSize/1.5);
-    texture = (!playerResult.photo)?[_MyScene->_atlas textureNamed:@"avatar"]:[SKTexture textureWithImage:playerResult.photo];
+    texture = (!playerResult.photo)?[_myScene->_atlas textureNamed:@"avatar"]:[SKTexture textureWithImage:playerResult.photo];
     SKSpriteNode *imageNode = [SKSpriteNode spriteNodeWithTexture:texture];
     [imageNode setSize:size];
     SKCropNode *cropNode = [SKCropNode node];
-    SKSpriteNode *maskShapeNode = [SKSpriteNode spriteNodeWithTexture:[_MyScene->_atlas textureNamed:@"picture-frame-mask"]];
+    SKSpriteNode *maskShapeNode = [SKSpriteNode spriteNodeWithTexture:[_myScene->_atlas textureNamed:@"picture-frame-mask"]];
     [cropNode setMaskNode:maskShapeNode];
     [cropNode addChild:imageNode];
     cropNode.position = CGPointMake(0, self.size.height/2 + imageNode.size.height/2);

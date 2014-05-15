@@ -24,7 +24,8 @@
     
     myScene->_atlas = [SKTextureAtlas atlasNamed:@"sprite"];
     myScene->_noOfCollisionsWithEnemies = 0;
-    [[SKTAudio sharedInstance] playBackgroundMusic:@"bgMusic.mp3"];
+
+    
     myScene.name = @"scene";
     myScene.physicsWorld.gravity = CGVectorMake(0, 0);
     
@@ -34,29 +35,72 @@
     [myScene->_worldNode addChild:myScene.player];
     [SpritePrinter setupSounds:myScene];
     [SpritePrinter setupScoreLabel:myScene];
+    
+    [self setupMusicButton:myScene];
+    [self setupSoundButton:myScene];
+    
+    if ([[NSUserDefaults standardUserDefaults] integerForKey:@"music"]) {
+        [[SKTAudio sharedInstance] playBackgroundMusic:@"bgMusic.mp3"];
+    }
 }
 
 + (void)setupSounds:(MyScene *)myScene
 {
-    myScene->_soundCoin = [SKAction playSoundFileNamed:@"coin.wav" waitForCompletion:NO];
-    myScene->_soundDing = [SKAction playSoundFileNamed:@"ding.wav" waitForCompletion:NO];
-    myScene->_soundFalling = [SKAction playSoundFileNamed:@"falling.wav" waitForCompletion:NO];
-    myScene->_soundFlapping = [SKAction playSoundFileNamed:@"flapping.wav" waitForCompletion:NO];
-    myScene->_soundHitGround = [SKAction playSoundFileNamed:@"hitGround.wav" waitForCompletion:NO];
-    myScene->_soundPop = [SKAction playSoundFileNamed:@"pop.wav" waitForCompletion:NO];
-    myScene->_soundWhack = [SKAction playSoundFileNamed:@"whack.wav" waitForCompletion:NO];
+    myScene->_soundCoin = [SKAction playSoundFileNamed:@"coin.mp3" waitForCompletion:NO];
+    myScene->_soundFalling = [SKAction playSoundFileNamed:@"coin.mp3" waitForCompletion:NO];
+    myScene->_soundFlapping = [SKAction playSoundFileNamed:@"flap.mp3" waitForCompletion:NO];
+    myScene->_soundHitGround = [SKAction playSoundFileNamed:@"hit.mp3" waitForCompletion:NO];
+    myScene->_soundPop = [SKAction playSoundFileNamed:@"coin.mp3" waitForCompletion:NO];
+    myScene->_soundWhack = [SKAction playSoundFileNamed:@"hit.mp3" waitForCompletion:NO];
 }
 
 + (void)setupTutorial:(MyScene *)myScene
 {
+    [self setupMusicButton:myScene];
+    [self setupSoundButton:myScene];
+    
+    myScene->_gameTitleLabel = [SKLabelNode labelNodeWithFontNamed:kFontName];
+    myScene->_gameTitleLabel.fontColor = kFontColor;
+    myScene->_gameTitleLabel.fontSize = (IPAD?kFontIpad:kFontIphone)*3.5;
+    myScene->_gameTitleLabel.text = @"FlyFish";
+    myScene->_gameTitleLabel.zPosition = LayerUI;
+    myScene->_gameTitleLabel.position = CGPointMake(myScene.size.width/1.8, myScene.size.height/2.2);
+    [myScene->_worldNode addChild:myScene->_gameTitleLabel];
+    
     myScene->_tutorialLabel = [SKLabelNode labelNodeWithFontNamed:kFontName];
     myScene->_tutorialLabel.fontColor = kFontColor;
     myScene->_tutorialLabel.fontSize = (IPAD?kFontIpad:kFontIphone)*1.5;
     myScene->_tutorialLabel.text = NSLocalizedStringFromTable(@"TAP_TO_FLY", @"Translation", @"Tap to fly at first");
     myScene->_tutorialLabel.zPosition = LayerUI;
-    myScene->_tutorialLabel.position = CGPointMake(myScene.player.position.x + myScene.player.size.width, myScene.player.position.y);
-    myScene->_tutorialLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+    myScene->_tutorialLabel.position = CGPointMake(myScene.size.width * 0.5, myScene.size.height*0.2);
+    myScene->_tutorialLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
     [myScene->_worldNode addChild:myScene->_tutorialLabel];
+}
+
++ (void)setupMusicButton:(MyScene *)myScene
+{
+    if ([[NSUserDefaults standardUserDefaults] integerForKey:@"music"]) {
+        myScene->_musicButton = [SKSpriteNode spriteNodeWithImageNamed:@"music-on"];
+    } else {
+        myScene->_musicButton = [SKSpriteNode spriteNodeWithImageNamed:@"music-off"];
+    }
+    myScene->_musicButton.name = @"musicButton";
+    myScene->_musicButton.zPosition = LayerUI;
+    myScene->_musicButton.position = CGPointMake(myScene.size.width-myScene->_musicButton.size.width, myScene.size.height*0.9);
+    [myScene->_worldNode addChild:myScene->_musicButton];
+}
+
++ (void)setupSoundButton:(MyScene *)myScene
+{
+    if ([[NSUserDefaults standardUserDefaults] integerForKey:@"sound"]) {
+        myScene->_soundButton = [SKSpriteNode spriteNodeWithImageNamed:@"sound-on"];
+    } else {
+        myScene->_soundButton = [SKSpriteNode spriteNodeWithImageNamed:@"sound-off"];
+    }
+    myScene->_soundButton.name = @"soundButton";
+    myScene->_soundButton.zPosition = LayerUI;
+    myScene->_soundButton.position = CGPointMake(myScene.size.width-myScene->_musicButton.size.width * 2.5, myScene.size.height*0.9);
+    [myScene->_worldNode addChild:myScene->_soundButton];
 }
 
 + (void)setupScoreLabel:(MyScene *)myScene
@@ -164,8 +208,14 @@
     [gameCenterButton addChild:gameCenterLabel];
     gameCenterLabel.position = CGPointMake(0, okButtonLabel.position.y);
     
-    
-    
+    SKLabelNode *creditsLabel = [SKLabelNode labelNodeWithFontNamed:kFontName];
+    creditsLabel.text = NSLocalizedStringFromTable(@"CREDITS", @"Translation", @"Credits button");
+    creditsLabel.zPosition = LayerUI;
+    creditsLabel.fontSize = IPAD?kFontIpad/2:kFontIphone/2;
+    creditsLabel.position = CGPointMake(myScene.size.width, 0);
+    creditsLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeRight;
+    [myScene->_worldNode addChild:creditsLabel];
+    //TODO
     //    gameOver.scale = 0;
     //    gameOver.alpha = 0;
     //    SKAction *group = [SKAction group:@[[SKAction fadeInWithDuration:0.3], [SKAction scaleTo:1.0 duration:0.3]

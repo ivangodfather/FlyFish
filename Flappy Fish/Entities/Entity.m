@@ -12,13 +12,13 @@
 
 @implementation Entity
 {
-    MyScene *_MyScene;
+    MyScene *_myScene;
 }
 
 - (instancetype)initWithTexture:(SKTexture *)texture scene:(MyScene *)myScene
 {
     if (self = [super initWithTexture:texture]) {
-        _MyScene = myScene;
+        _myScene = myScene;
         [self moveWithScene:myScene];
     }
     return self;

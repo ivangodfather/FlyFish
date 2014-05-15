@@ -10,14 +10,14 @@
 
 @implementation Bug
 {
-    MyScene *_MyScene;
+    MyScene *_myScene;
 }
 
 - (instancetype)initWithScene:(MyScene *)myScene
 {
     SKTexture *texture = [myScene->_atlas textureNamed:@"bug1"];
     if (self = [super initWithTexture:texture scene:myScene]) {
-        _MyScene = myScene;
+        _myScene = myScene;
         self.name = @"bug";
         float min = self.size.height*2;
         float max = myScene.size.height - self.size.height*2.5;

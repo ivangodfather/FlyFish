@@ -14,13 +14,13 @@ static Emitter *_lastAdded;
 
 @implementation Emitter
 {
-    MyScene *_MyScene;
+    MyScene *_myScene;
     CGSize _size;
 }
 
 - (instancetype)initWithScene:(MyScene *)myScene
 {
-    _MyScene = myScene;
+    _myScene = myScene;
     if (self = [super init]) {
         self.zPosition = LayerEmitter;
     }

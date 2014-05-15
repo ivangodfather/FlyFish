@@ -12,14 +12,14 @@
 
 @implementation Smoke
 {
-    MyScene *_MyScene;
+    MyScene *_myScene;
 }
 
 - (instancetype)initWithScene:(MyScene *)myScene
 {
     CGSize size = CGSizeMake(kSmokeWidth, kSmokeHeight);
     if (self = [super initWithScene:myScene]) {
-        _MyScene = myScene;
+        _myScene = myScene;
         
         self.position = CGPointMake(myScene.size.width + size.width/2, 0);
         SKEmitterNode *emitterNode = [NSKeyedUnarchiver unarchiveObjectWithFile:
@@ -44,7 +44,7 @@
 
 - (void)applyActionsToPlayer
 {
-    _MyScene.player.velocity = CGPointMake(_MyScene.player.velocity.x, _MyScene.player.velocity.y + kSmokeImpulse);
+    _myScene.player.velocity = CGPointMake(_myScene.player.velocity.x, _myScene.player.velocity.y + kSmokeImpulse);
 }
 
 @end

@@ -20,4 +20,9 @@
     return self;
 }
 
+-(float)moveDuration
+{
+    return kBushesMoveDuration;
+}
+
 @end

@@ -10,12 +10,12 @@
 
 @implementation Crab
 {
-    MyScene *_MyScene;
+    MyScene *_myScene;
 }
 
 - (instancetype)initWithScene:(MyScene *)myScene
 {
-    _MyScene = myScene;
+    _myScene = myScene;
     SKTexture *texture = [myScene->_atlas textureNamed:@"crab1"];
     if (self = [super initWithTexture:texture scene:myScene]) {
         self.name = @"crab";

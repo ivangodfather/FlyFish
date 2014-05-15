@@ -8,18 +8,20 @@
 
 #import "FishPlayer.h"
 #import "Background.h"
+#define SOUND_IS_ON ([[NSUserDefaults standardUserDefaults] integerForKey:@"sound"])
+
 
 @implementation FishPlayer
 {
-    MyScene *_MyScene;
+    MyScene *_myScene;
     SKAction *_soundFlapping;
 }
 
 - (instancetype)initWithScene:(MyScene *)myScene
 {
     if (self = [super initWithTexture:[myScene->_atlas textureNamed:@"fish1.png"]]) {
-        _MyScene = myScene;
-        _soundFlapping = [SKAction playSoundFileNamed:@"flapping.wav" waitForCompletion:NO];
+        _myScene = myScene;
+        _soundFlapping = [SKAction playSoundFileNamed:@"flap.mp3" waitForCompletion:NO];
         
         self.position = CGPointMake(kStartPosition, myScene.size.height*0.5);
         self.name = @"fish";
@@ -46,7 +48,7 @@
 - (void)flapFish
 {
     self.velocity = CGPointMake(0, kFlapImpulse);
-    [self runAction:_soundFlapping];
+    if  SOUND_IS_ON [self runAction:_soundFlapping];
     
     SKEmitterNode *emitterNode = [NSKeyedUnarchiver unarchiveObjectWithFile:
                                   [[NSBundle mainBundle] pathForResource:@"FireParticle"
@@ -54,7 +56,7 @@
     
     [self addChild:emitterNode];
     emitterNode.position = CGPointMake(-self.size.width/3,-self.size.height/3);
-    emitterNode.targetNode = _MyScene;
+    emitterNode.targetNode = _myScene;
     
     SKAction *rotate = [SKAction rotateByAngle:DegreesToRadians(30) duration:0.5];
     SKAction *rotateDown = [SKAction rotateByAngle:DegreesToRadians(-20) duration:0.1];
@@ -84,10 +86,10 @@
     self.physicsBody.collisionBitMask = 0;
     self.physicsBody.categoryBitMask = 0;
     NSArray *textures = [NSArray arrayWithObjects:
-                         [_MyScene->_atlas textureNamed:@"dead1.png"],
-                         [_MyScene->_atlas textureNamed:@"dead2.png"],
-                         [_MyScene->_atlas textureNamed:@"dead3.png"],
-                         [_MyScene->_atlas textureNamed:@"dead4.png"],
+                         [_myScene->_atlas textureNamed:@"dead1.png"],
+                         [_myScene->_atlas textureNamed:@"dead2.png"],
+                         [_myScene->_atlas textureNamed:@"dead3.png"],
+                         [_myScene->_atlas textureNamed:@"dead4.png"],
                          nil];
     SKAction *animateTextures = [SKAction animateWithTextures:textures timePerFrame:0.5];
     SKAction *moveFoward = [SKAction moveBy:CGVectorMake(self.size.width*3, 0) duration:1];
@@ -97,14 +99,14 @@
 - (void)fishGravity
 {
     CGPoint gravity = CGPointMake(0, kPlayerGravity);
-    CGPoint gravityStep = CGPointMultiplyScalar(gravity, _MyScene->_dt);
+    CGPoint gravityStep = CGPointMultiplyScalar(gravity, _myScene->_dt);
     self.velocity = CGPointAdd(self.velocity, gravityStep);
-    CGPoint velocityStep = CGPointMultiplyScalar(self.velocity, _MyScene->_dt);
+    CGPoint velocityStep = CGPointMultiplyScalar(self.velocity, _myScene->_dt);
     self.position = CGPointAdd(self.position, velocityStep);
     if (self.position.y < self.size.height/2) {
         self.position = CGPointMake(self.position.x, self.size.height/2);
     }
-    int maxY = _MyScene.size.height - self.size.height/2;
+    int maxY = _myScene.size.height - self.size.height/2;
     if (self.position.y > maxY) {
         self.position = CGPointMake(self.position.x, maxY);
     }

@@ -12,7 +12,7 @@
 
 @implementation VitaminRed
 {
-    MyScene *_MyScene;
+    MyScene *_myScene;
 }
 
 
@@ -20,7 +20,7 @@
 {
     SKTexture *texture = [myScene->_atlas textureNamed:@"vitamin_red"];
     if (self = [super initWithTexture:texture scene:myScene]) {
-        _MyScene = myScene;
+        _myScene = myScene;
     }
     return self;
 }
@@ -37,7 +37,7 @@
     SKAction *groupRev = [SKAction group:@[scaleFishRev,redActionRev]];
     
     
-    [_MyScene.player runAction:[SKAction sequence:@[group,[SKAction waitForDuration:kVitaminRedDuration],groupRev]]];
+    [_myScene.player runAction:[SKAction sequence:@[group,[SKAction waitForDuration:kVitaminRedDuration],groupRev]]];
 }
 
 @end

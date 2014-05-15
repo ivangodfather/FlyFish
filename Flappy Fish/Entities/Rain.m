@@ -10,13 +10,13 @@
 
 @implementation Rain
 {
-    MyScene *_MyScene;
+    MyScene *_myScene;
 }
 
 - (instancetype)initWithScene:(MyScene *)myScene
 {
     if (self = [super initWithScene:myScene]) {
-        _MyScene = myScene;
+        _myScene = myScene;
         self.position = CGPointMake(myScene.size.width/2, myScene.size.height);
         NSString *type = RandomFloat()>0.5?@"Rain":@"Snow";
         SKEmitterNode *emitterNode = [NSKeyedUnarchiver unarchiveObjectWithFile:
